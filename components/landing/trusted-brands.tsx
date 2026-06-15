@@ -18,7 +18,7 @@ export function TrustedBrands() {
           {brands.map((brand) => (
             <div
               key={brand.name}
-              className="group flex h-20 cursor-pointer items-center justify-center rounded-lg border border-border/70 bg-white/80 px-4 transition-all hover:-translate-y-0.5 hover:border-primary/50 hover:bg-white active:translate-y-0 active:scale-[0.98] active:border-primary/50 active:bg-white"
+              className="group flex h-20 cursor-pointer items-center justify-center rounded-lg border border-border/70 bg-white px-4 transition-all hover:-translate-y-0.5 hover:border-primary/50 hover:bg-white active:translate-y-0 active:scale-[0.98] active:border-primary/50 active:bg-white"
             >
               <img
                 src={brand.logo}

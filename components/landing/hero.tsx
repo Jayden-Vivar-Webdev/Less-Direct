@@ -1,4 +1,4 @@
-import { ArrowRight, Check, Circle, Truck } from "lucide-react";
+import { ArrowRight, Circle, Truck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function Hero() {
@@ -17,33 +17,33 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
       </div>
 
-      <div className="relative mx-auto flex max-w-7xl justify-center px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
-        <div className="max-w-2xl text-center space-y-7">
-          <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
+      <div className="relative mx-auto flex max-w-7xl justify-center px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
+        <div className="w-full max-w-2xl space-y-7 text-center">
+          <span className="inline-flex max-w-full items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-primary sm:text-xs">
             Trade Only electrical wholesale
           </span>
-          <div className="relative overflow-hidden mt-6">
+          <div className="relative mt-6 overflow-hidden">
             <img
               src="/landscape-logo.png"
               alt="Less Direct Logo"
-              className="size-full object-cover"
+              className="mx-auto h-auto w-full max-w-[540px] object-contain"
             />
           </div>
 
-          <div className="flex flex-row justify-center items-center gap-5">
-            <p className="italic text-balance text-2xl font-extrabold leading-[1.05] tracking-tight sm:text-3xl lg:text-4xl">
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 sm:gap-x-5">
+            <p className="italic text-balance text-xl font-extrabold leading-[1.05] tracking-tight sm:text-3xl lg:text-4xl">
               Security
             </p>
-            <span className="flex size-3 shrink-0 items-center justify-center rounded-full bg-[var(--primary)] text-primary-foreground">
+            <span className="flex size-3 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
               <Circle strokeWidth={0} aria-hidden="true" />
             </span>
-            <p className="italic text-balance text-2xl font-extrabold leading-[1.05] tracking-tight sm:text-3xl lg:text-4xl">
+            <p className="italic text-balance text-xl font-extrabold leading-[1.05] tracking-tight sm:text-3xl lg:text-4xl">
               Electrical
             </p>
-            <span className="flex size-3 shrink-0 items-center justify-center rounded-full bg-[var(--primary)] text-primary-foreground">
+            <span className="flex size-3 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
               <Circle strokeWidth={0} aria-hidden="true" />
             </span>
-            <p className="italic text-balance text-2xl font-extrabold leading-[1.05] tracking-tight sm:text-3xl lg:text-4xl">
+            <p className="italic text-balance text-xl font-extrabold leading-[1.05] tracking-tight sm:text-3xl lg:text-4xl">
               Solar
             </p>
           </div>
@@ -63,7 +63,7 @@ export function Hero() {
             <Button
               size="lg"
               nativeButton={false}
-              className="h-12 px-6 text-base font-semibold"
+              className="h-12 w-full px-6 text-sm font-semibold sm:w-auto sm:text-base"
               render={
                 <a href="#products">
                   Open A Trade Account <ArrowRight className="size-4" />
@@ -74,7 +74,7 @@ export function Hero() {
               size="lg"
               variant="outline"
               nativeButton={false}
-              className="h-12 px-6 text-base font-semibold"
+              className="h-12 w-full px-6 text-sm font-semibold sm:w-auto sm:text-base"
               render={<a href="#contact">Request Pricing</a>}
             />
           </div>
