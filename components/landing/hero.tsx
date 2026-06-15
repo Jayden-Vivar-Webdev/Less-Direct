@@ -34,13 +34,13 @@ export function Hero() {
             <p className="italic text-balance text-2xl font-extrabold leading-[1.05] tracking-tight sm:text-3xl lg:text-4xl">
               Security
             </p>
-            <span className="flex size-3 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
+            <span className="flex size-3 shrink-0 items-center justify-center rounded-full bg-[var(--primary)] text-primary-foreground">
               <Circle strokeWidth={0} aria-hidden="true" />
             </span>
             <p className="italic text-balance text-2xl font-extrabold leading-[1.05] tracking-tight sm:text-3xl lg:text-4xl">
               Electrical
             </p>
-            <span className="flex size-3 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
+            <span className="flex size-3 shrink-0 items-center justify-center rounded-full bg-[var(--primary)] text-primary-foreground">
               <Circle strokeWidth={0} aria-hidden="true" />
             </span>
             <p className="italic text-balance text-2xl font-extrabold leading-[1.05] tracking-tight sm:text-3xl lg:text-4xl">
