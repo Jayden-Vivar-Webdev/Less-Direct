@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @source "./app/**/*.{js,ts,jsx,tsx,mdx}";
-@source "./components/**/*.{js,ts,jsx,tsx,mdx}";
+@source "./Components/**/*.{js,ts,jsx,tsx,mdx}";
 @source "./lib/**/*.{js,ts,jsx,tsx,mdx}";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
