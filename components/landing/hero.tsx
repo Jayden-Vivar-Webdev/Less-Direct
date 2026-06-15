@@ -24,7 +24,7 @@ export function Hero() {
           </span>
           <div className="relative overflow-hidden mt-6">
             <img
-              src="./landscape-logo.png"
+              src="/landscape-logo.png"
               alt="Less Direct Logo"
               className="size-full object-cover"
             />
