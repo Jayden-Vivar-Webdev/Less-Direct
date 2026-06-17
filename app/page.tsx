@@ -27,8 +27,8 @@ export default function Page() {
         <Features />
         <Products />
         <HowItWorks />
-        {/* <Benefits />
-        <About />
+        <Benefits />
+        {/* <About />
         <Testimonials />
         <Contact />
         <Faq />
