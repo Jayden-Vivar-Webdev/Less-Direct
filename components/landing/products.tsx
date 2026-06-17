@@ -1,27 +1,27 @@
-import { ShoppingCart, Star } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { ShoppingCart, Star } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const products = [
   {
-    name: "6242Y Twin & Earth Cable 2.5mm² — 100m",
+    name: "6242Y Twin & Earth Cable 2.5mm² (100m)",
     sku: "CAB-TE25-100",
-    price: "£62.40",
+    price: "$62.40",
     unit: "per drum",
     image: "/images/prod-cable.png",
     tag: "Best seller",
   },
   {
-    name: "10-Way Dual RCD Consumer Unit",
+    name: "10 Way Dual RCD Consumer Unit (Discounted Rates)",
     sku: "CU-10DRCD",
-    price: "£78.95",
-    unit: "ex VAT",
+    price: "$78.95",
+    unit: "10 pack",
     image: "/images/prod-breaker.png",
     tag: "18th Edition",
   },
   {
-    name: "Fire-Rated LED Downlight 6W — Pack of 10",
+    name: "Fire-Rated LED Downlight 6W (Pack of 10)",
     sku: "DL-FR6-10",
-    price: "£44.50",
+    price: "$44.50",
     unit: "per pack",
     image: "/images/prod-downlight.png",
     tag: "Dimmable",
@@ -29,12 +29,12 @@ const products = [
   {
     name: "Double Socket 13A with Twin USB-A/C",
     sku: "SKT-2G-USB",
-    price: "£9.85",
-    unit: "ex VAT",
+    price: "$9.85",
+    unit: "per pack",
     image: "/images/prod-socket.png",
     tag: "New",
   },
-]
+];
 
 export function Products() {
   return (
@@ -49,7 +49,12 @@ export function Products() {
               Stocked deep, priced for the trade
             </h2>
           </div>
-          <Button variant="outline" size="lg" className="font-semibold" render={<a href="#contact">View full catalogue</a>} />
+          <Button
+            variant="outline"
+            size="lg"
+            className="font-semibold"
+            render={<a href="#contact">Request Full Range Access</a>}
+          />
         </div>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -71,21 +76,33 @@ export function Products() {
               <div className="flex flex-1 flex-col p-5">
                 <div className="flex items-center gap-1 text-primary">
                   {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="size-3.5 fill-current" aria-hidden="true" />
+                    <Star
+                      key={i}
+                      className="size-3.5 fill-current"
+                      aria-hidden="true"
+                    />
                   ))}
                 </div>
-                <h3 className="mt-2 text-sm font-semibold leading-snug">{product.name}</h3>
-                <p className="mt-1 text-xs text-muted-foreground">SKU: {product.sku}</p>
+                <h3 className="mt-2 text-sm font-semibold leading-snug">
+                  {product.name}
+                </h3>
+                <p className="mt-1 text-xs text-muted-foreground">
+                  SKU: {product.sku}
+                </p>
                 <div className="mt-4 flex items-end gap-1.5">
-                  <span className="text-2xl font-extrabold tracking-tight">{product.price}</span>
-                  <span className="pb-1 text-xs text-muted-foreground">{product.unit}</span>
+                  <span className="text-2xl font-extrabold tracking-tight">
+                    {product.price}
+                  </span>
+                  <span className="pb-1 text-xs text-muted-foreground">
+                    {product.unit}
+                  </span>
                 </div>
                 <Button
                   size="lg"
                   className="mt-4 w-full font-semibold"
                   render={
                     <a href="#contact">
-                      <ShoppingCart className="size-4" /> Add to order
+                      <ShoppingCart className="size-4" /> Open A Trade Account
                     </a>
                   }
                 />
@@ -95,5 +112,5 @@ export function Products() {
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -20,10 +20,11 @@ export default function Page() {
       <SiteHeader />
       <main>
         <Hero />
-        <TrustedBrands />
-        {/* <Features />
+        {/* <TrustedBrands /> */}
         <Stats />
-        <Categories />
+        <Features />
+
+        {/* <Categories />
         <Products />
         <HowItWorks />
         <Benefits />
