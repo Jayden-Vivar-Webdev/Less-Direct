@@ -51,6 +51,7 @@ export function Products() {
           </div>
           <Button
             variant="outline"
+            nativeButton={false}
             size="lg"
             className="font-semibold"
             render={<a href="#contact">Request Full Range Access</a>}
@@ -99,6 +100,7 @@ export function Products() {
                 </div>
                 <Button
                   size="lg"
+                  nativeButton={false}
                   className="mt-4 w-full font-semibold"
                   render={
                     <a href="#contact">

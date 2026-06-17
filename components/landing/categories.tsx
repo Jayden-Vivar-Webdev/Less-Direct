@@ -1,25 +1,28 @@
-import { ArrowUpRight } from "lucide-react"
+import { ArrowUpRight } from "lucide-react";
 
 const categories = [
   {
-    title: "Cables & Wiring",
-    count: "1,800+ lines",
-    image: "/images/cat-cables.png",
-    description: "Twin & earth, SWA, flex, data and tri-rated by the metre or drum.",
+    title: "Network Cameras",
+    count: "WizMind 8 Series...",
+    image: "/images/Network Cameras.jpg",
+    description:
+      "Full suite of all Dahua network cameras for home and commercial purposes",
   },
   {
-    title: "Circuit Protection",
-    count: "950+ lines",
-    image: "/images/cat-protection.png",
-    description: "Consumer units, MCBs, RCBOs, surge protection and isolators.",
+    title: "PT Cameras",
+    count: "IP PT 3 Series...",
+    image: "/images/PT-Cameras.png",
+    description:
+      "Pan tilt cameras for percisions CCTV operations. Optional models avaliable.",
   },
   {
-    title: "Lighting & Fittings",
-    count: "2,400+ lines",
-    image: "/images/cat-lighting.png",
-    description: "LED downlights, panels, battens, emergency and exterior lighting.",
+    title: "PTZ Cameras",
+    count: "X-Spans Series...",
+    image: "/images/PTZ_Cameras.png",
+    description:
+      "Pan, Tilt, & Zoom cameras available. This provides full suveriance of properties & commercial spaces.",
   },
-]
+];
 
 export function Categories() {
   return (
@@ -51,7 +54,9 @@ export function Categories() {
               <div className="p-6">
                 <div className="flex items-start justify-between gap-2">
                   <div>
-                    <h3 className="text-xl font-bold tracking-tight">{cat.title}</h3>
+                    <h3 className="text-xl font-bold tracking-tight">
+                      {cat.title}
+                    </h3>
                     <p className="text-xs font-medium uppercase tracking-wider text-primary">
                       {cat.count}
                     </p>
@@ -67,5 +72,5 @@ export function Categories() {
         </div>
       </div>
     </section>
-  )
+  );
 }

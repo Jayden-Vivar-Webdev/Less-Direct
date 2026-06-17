@@ -41,8 +41,8 @@ export function SiteFooter() {
           <div>
             <Logo className="h-40" />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
-              Trade-only electrical wholesale. Genuine stock, honest prices and
-              next-day delivery — built for electricians.
+              Trade only electrical wholesale. Genuine stock, honest prices and
+              next-day delivery built for electricians.
             </p>
           </div>
           {columns.map((col) => (

@@ -19,7 +19,12 @@ export function Hero() {
         <img
           src="/images/warehouse.png"
           alt="Electrician wiring a consumer unit"
-          className="size-full object-cover"
+          className="size-full object-cover md:hidden"
+        />
+        <img
+          src="/images/warehouse-landscape.webp"
+          alt="Electrician wiring a consumer unit"
+          className="hidden size-full object-cover md:block"
         />
         <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_10%,hsl(var(--primary)/0.14),transparent_44%),radial-gradient(circle_at_90%_85%,hsl(var(--primary)/0.12),transparent_42%)]" />
