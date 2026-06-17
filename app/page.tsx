@@ -13,6 +13,7 @@ import { Contact } from "@/components/landing/contact";
 import { Faq } from "@/components/landing/faq";
 import { CtaBanner } from "@/components/landing/cta-banner";
 import { SiteFooter } from "@/components/landing/site-footer";
+import { FloatingCta } from "@/components/landing/floating-cta";
 
 export default function Page() {
   return (
@@ -34,6 +35,7 @@ export default function Page() {
         <Faq />
         <CtaBanner /> */}
       </main>
+      <FloatingCta />
       <SiteFooter />
     </div>
   );
