@@ -32,6 +32,11 @@ export function Features() {
     <section className="relative overflow-hidden border-b border-border bg-card/35">
       <div
         aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[url('/images/warehouse.png')] bg-cover bg-center opacity-20 md:bg-fixed"
+      />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-black/55" />
+      <div
+        aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_10%,hsl(var(--primary)/0.14),transparent_44%),radial-gradient(circle_at_90%_85%,hsl(var(--primary)/0.12),transparent_42%)]"
       />
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">

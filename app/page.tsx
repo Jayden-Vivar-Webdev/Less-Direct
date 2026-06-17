@@ -22,12 +22,12 @@ export default function Page() {
         <Hero />
         {/* <TrustedBrands /> */}
         <Stats />
-        <Features />
 
-        {/* <Categories />
+        <Categories />
+        <Features />
         <Products />
         <HowItWorks />
-        <Benefits />
+        {/* <Benefits />
         <About />
         <Testimonials />
         <Contact />

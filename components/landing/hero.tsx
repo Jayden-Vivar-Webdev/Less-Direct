@@ -21,8 +21,9 @@ export function Hero() {
           alt="Electrician wiring a consumer unit"
           className="size-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/35 to-background/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_10%,hsl(var(--primary)/0.14),transparent_44%),radial-gradient(circle_at_90%_85%,hsl(var(--primary)/0.12),transparent_42%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-background/75" />
       </div>
 
       <div className="relative mx-auto flex max-w-7xl justify-center px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
