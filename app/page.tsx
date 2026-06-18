@@ -29,11 +29,11 @@ export default function Page() {
         <Products />
         <HowItWorks />
         <Benefits />
-        {/* <About />
-        <Testimonials />
+        {/* <About /> */}
+        {/* <Testimonials /> */}
         <Contact />
-        <Faq />
-        <CtaBanner /> */}
+        {/* <Faq /> */}
+        <CtaBanner />
       </main>
       <FloatingCta />
       <SiteFooter />
