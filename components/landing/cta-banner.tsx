@@ -25,6 +25,7 @@ export function CtaBanner() {
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <Button
               size="lg"
+              nativeButton={false}
               className="h-12 px-6 text-base font-semibold"
               render={
                 <a href="#contact">
@@ -35,6 +36,7 @@ export function CtaBanner() {
             <Button
               size="lg"
               variant="outline"
+              nativeButton={false}
               className="h-12 px-6 text-base font-semibold"
               render={<a href="#products">Browse the range</a>}
             />
