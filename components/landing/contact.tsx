@@ -20,7 +20,7 @@ const details = [
 ];
 
 const fieldClass =
-  "w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-ring focus:outline-none focus:ring-2 focus:ring-ring/40";
+  "w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/40";
 
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -99,9 +99,9 @@ export function Contact() {
                     });
 
                     if (!response.ok) {
-                      const result = (await response.json().catch(() => null)) as
-                        | { error?: string }
-                        | null;
+                      const result = (await response
+                        .json()
+                        .catch(() => null)) as { error?: string } | null;
                       throw new Error(
                         result?.error || "Could not submit the form.",
                       );
