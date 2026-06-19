@@ -24,6 +24,8 @@ const fieldClass =
 
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   return (
     <section id="contact" className="border-b border-border">
@@ -74,9 +76,48 @@ export function Contact() {
             ) : (
               <form
                 className="space-y-4"
-                onSubmit={(e) => {
+                onSubmit={async (e) => {
                   e.preventDefault();
-                  setSubmitted(true);
+                  setErrorMessage("");
+                  setIsSubmitting(true);
+
+                  const form = e.currentTarget;
+                  const formData = new FormData(form);
+                  const payload = {
+                    name: String(formData.get("name") || ""),
+                    company: String(formData.get("company") || ""),
+                    email: String(formData.get("email") || ""),
+                    phone: String(formData.get("phone") || ""),
+                    message: String(formData.get("message") || ""),
+                  };
+
+                  try {
+                    const response = await fetch("/api/contact", {
+                      method: "POST",
+                      headers: { "Content-Type": "application/json" },
+                      body: JSON.stringify(payload),
+                    });
+
+                    if (!response.ok) {
+                      const result = (await response.json().catch(() => null)) as
+                        | { error?: string }
+                        | null;
+                      throw new Error(
+                        result?.error || "Could not submit the form.",
+                      );
+                    }
+
+                    form.reset();
+                    setSubmitted(true);
+                  } catch (error) {
+                    setErrorMessage(
+                      error instanceof Error
+                        ? error.message
+                        : "Could not submit the form.",
+                    );
+                  } finally {
+                    setIsSubmitting(false);
+                  }
                 }}
               >
                 <div className="grid gap-4 sm:grid-cols-2">
@@ -161,10 +202,16 @@ export function Contact() {
                 <Button
                   type="submit"
                   size="lg"
+                  disabled={isSubmitting}
                   className="h-12 w-full text-base font-semibold"
                 >
-                  Open my trade account
+                  {isSubmitting ? "Sending..." : "Open my trade account"}
                 </Button>
+                {errorMessage ? (
+                  <p className="text-center text-sm text-red-600">
+                    {errorMessage}
+                  </p>
+                ) : null}
                 <p className="text-center text-xs text-muted-foreground">
                   Trade-focused support for security, electrical and solar
                   supply.
