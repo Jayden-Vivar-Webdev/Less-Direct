@@ -32,9 +32,9 @@ export default function Page() {
         <AnimatedGlobe />
         <About />
         {/* <Testimonials /> */}
-        <Faq />
-        <CtaBanner />
+        {/* <CtaBanner /> */}
         <Contact />
+        <Faq />
       </main>
       <FloatingCta />
       <SiteFooter />

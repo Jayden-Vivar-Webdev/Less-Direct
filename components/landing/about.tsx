@@ -4,7 +4,7 @@ export function About() {
   return (
     <section id="about" className="border-b border-border">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8">
-        <div className="order-2 lg:order-1">
+        <div className="order-2 lg:order-2">
           <span className="text-sm font-semibold uppercase tracking-widest text-primary">
             About LESS DIRECT
           </span>
@@ -23,18 +23,18 @@ export function About() {
             large-scale project, our focus is simple: dependable service and
             strong trade pricing that helps your business grow.
           </p>
-          <Button
+          {/* <Button
             size="lg"
             variant="outline"
             nativeButton={false}
             className="mt-8 h-12 px-6 text-base font-semibold"
             render={<a href="#contact">Talk to our trade team</a>}
-          />
+          /> */}
         </div>
 
-        <div className="order-1 overflow-hidden rounded-xl border border-border lg:order-2">
+        <div className="order-1 overflow-hidden rounded-xl border border-border lg:order-1">
           <img
-            src="/images/about-team.png"
+            src="/images/less-warehouse.png"
             alt="LESS DIRECT trade counter team helping an electrician"
             className="aspect-[4/3] size-full object-cover"
           />

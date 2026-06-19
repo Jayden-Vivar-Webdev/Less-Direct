@@ -1,14 +1,15 @@
 import Earth from "@/components/landing/globe";
 import { Sparkles } from "@/components/landing/sparkles";
 import { Button } from "@/components/ui/button";
-
+import { ArrowRight } from "lucide-react";
 export function AnimatedGlobe() {
   return (
     <section
       id="coverage"
       className="relative overflow-hidden border-b border-border"
     >
-      <div className="absolute inset-0 bg-black" />
+      <div className="absolute inset-0 bg-[url('/images/warehouse-landscape.webp')] bg-cover bg-center opacity-25" />
+      <div className="absolute inset-0 bg-black/10" />
       <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
         <article className="text-center lg:text-left">
           <span className="inline-flex items-center rounded-full border border-primary/35 bg-primary/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-primary sm:text-xs">
@@ -31,7 +32,7 @@ export function AnimatedGlobe() {
               size="lg"
               nativeButton={false}
               className="h-12 px-6 text-sm font-semibold sm:text-base"
-              render={<a href="#products">Explore Product Range</a>}
+              render={<a href="#contact">Explore Our Full Range</a>}
             />
           </div>
         </article>
@@ -59,6 +60,33 @@ export function AnimatedGlobe() {
               color="#F6C66A"
               className="absolute inset-x-0 bottom-0 h-full w-full"
             />
+          </div>
+        </div>
+      </div>
+      <div className="relative mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+        <div className="relative overflow-hidden rounded-2xl border border-primary/40 px-6 py-14 text-center sm:px-12">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 opacity-20"
+            style={{
+              backgroundImage: "url('/images/carbon-fibre-bg.jpg')",
+              backgroundSize: "380px 380px",
+              backgroundPosition: "center",
+              backgroundRepeat: "repeat",
+            }}
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-black/55"
+          />
+          <div className="relative z-10">
+            <h2 className="mx-auto max-w-2xl text-balance text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+              Quality products. Trade pricing. Fast support.
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl text-pretty leading-relaxed text-white/80">
+              Partner with LESS Direct for genuine security products and a
+              growing electrical and solar range, backed by dependable service.
+            </p>
           </div>
         </div>
       </div>
