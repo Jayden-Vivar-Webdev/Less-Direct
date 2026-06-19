@@ -49,7 +49,7 @@ export function SiteHeader() {
               className="flex items-center gap-2 text-sm font-semibold text-foreground"
             >
               <Phone className="size-4 text-primary" aria-hidden="true" />
-              +6142 4696 960
+              +61 424 696 960
             </a>
             <Button
               size="lg"
