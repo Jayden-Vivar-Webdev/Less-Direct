@@ -14,6 +14,7 @@ import { Faq } from "@/components/landing/faq";
 import { CtaBanner } from "@/components/landing/cta-banner";
 import { SiteFooter } from "@/components/landing/site-footer";
 import { FloatingCta } from "@/components/landing/floating-cta";
+import { AnimatedGlobe } from "@/components/landing/animated-globe";
 
 export default function Page() {
   return (
@@ -23,17 +24,17 @@ export default function Page() {
         <Hero />
         {/* <TrustedBrands /> */}
         <Stats />
-
         <Categories />
         <Features />
         <Products />
         <HowItWorks />
         <Benefits />
-        {/* <About /> */}
+        <About />
         {/* <Testimonials /> */}
+        <AnimatedGlobe />
         <Contact />
-        {/* <Faq /> */}
         <CtaBanner />
+        <Faq />
       </main>
       <FloatingCta />
       <SiteFooter />

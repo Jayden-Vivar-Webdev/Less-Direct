@@ -3,27 +3,27 @@ import { BadgePoundSterling, Headphones, ShieldCheck, Truck } from "lucide-react
 const features = [
   {
     icon: BadgePoundSterling,
-    title: "Real trade pricing",
+    title: "Competitive trade pricing",
     description:
-      "Account holders get genuine wholesale rates with no minimum spend and clear, itemised pricing.",
+      "Access wholesale pricing structured for installers, with account rates and volume discounts available.",
   },
   {
     icon: Truck,
-    title: "Next-day to site",
+    title: "Fast project delivery",
     description:
-      "Order by 8pm for free next-day delivery to your yard, depot or directly to the job.",
+      "Reliable dispatch helps keep installs on schedule, with fast delivery support across NSW and Australia.",
   },
   {
     icon: ShieldCheck,
-    title: "Certified & compliant",
+    title: "Genuine Dahua range",
     description:
-      "Every product is genuine, fully certified and meets the latest 18th Edition standards.",
+      "We specialise in genuine Dahua solutions including Smart Dual Light, TiOC Pro, TiOC Duo, NVRs and intercoms.",
   },
   {
     icon: Headphones,
-    title: "Sparks who get it",
+    title: "Installer-first support",
     description:
-      "Our counter team are ex-trade — call up and talk specs with someone who knows the job.",
+      "Our team provides practical support on product selection, pricing and project supply requirements.",
   },
 ]
 
@@ -49,8 +49,9 @@ export function Features() {
               Everything you need from a trade supplier
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
-              Built around how electricians and installers actually buy: fast pricing,
-              reliable stock, compliant products and support that understands site work.
+              Built around how installers buy: quality products, dependable
+              stock, competitive pricing and support that understands project
+              timelines.
             </p>
           </div>
 

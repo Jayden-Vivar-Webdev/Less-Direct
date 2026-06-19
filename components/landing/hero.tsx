@@ -34,7 +34,7 @@ export function Hero() {
       <div className="relative mx-auto flex max-w-7xl justify-center px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
         <div className="w-full max-w-2xl space-y-7 text-center">
           <span className="inline-flex max-w-full items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-primary sm:text-xs">
-            Trade Only electrical wholesale
+            Trade-focused wholesale for installers
           </span>
           <div className="relative mt-6 overflow-hidden">
             <img
@@ -65,13 +65,13 @@ export function Hero() {
           <div className=" mt-3 flex w-full bg-primary h-[0.1]"></div>
 
           <h1 className="mt-6 italic text-balance text-3xl font-extrabold leading-[1.05] tracking-tight sm:text-4xl lg:text-[2.7rem]">
-            Build For Trades. Priced for{" "}
+            Built for Trade. Priced for{" "}
             <span className="text-[var(--primary)]">Less.</span>
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground">
-            Australia's Trade focused supplier of Dahua security, electrical and
-            solar products. Quality brands. Competative pricing. Reliable
-            supply.
+            LESS Direct supplies trade-quality security, electrical and solar
+            products to installers across Australia, backed by competitive
+            pricing, reliable stock and fast support.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
             <Button
@@ -107,7 +107,7 @@ export function Hero() {
                 <div className="text-start">
                   <h2 className="text-md leading-relaxed">Quality Brands</h2>
                   <p className="text-sm leading-relaxed text-muted-foreground">
-                    Trusted by professionals. Built to perform
+                    Genuine products trusted by professional installers
                   </p>
                 </div>
               </div>
@@ -120,7 +120,7 @@ export function Hero() {
                 <div className="text-start">
                   <h2 className="text-md leading-relaxed">Trade Pricing</h2>
                   <p className="text-sm leading-relaxed text-muted-foreground">
-                    Competitive rates built for trade accounts
+                    Competitive pricing with account and volume options
                   </p>
                 </div>
               </div>
@@ -133,7 +133,7 @@ export function Hero() {
                 <div className="text-start">
                   <h2 className="text-md leading-relaxed">Fast Delivery</h2>
                   <p className="text-sm leading-relaxed text-muted-foreground">
-                    Reliable dispatch with next day options available
+                    Fast, reliable dispatch to keep projects moving
                   </p>
                 </div>
               </div>
@@ -146,7 +146,7 @@ export function Hero() {
                 <div className="text-start">
                   <h2 className="text-md leading-relaxed">Trade Support</h2>
                   <p className="text-sm leading-relaxed text-muted-foreground">
-                    Local help from people who understand your work
+                    Local support from a team that understands installers
                   </p>
                 </div>
               </div>
@@ -163,7 +163,7 @@ export function Hero() {
                 <div className="text-start">
                   <h2 className="text-md leading-relaxed">Quality Brands</h2>
                   <p className="text-sm leading-relaxed text-muted-foreground">
-                    Trusted by professionals. Built to perform
+                    Genuine products trusted by professional installers
                   </p>
                 </div>
               </div>
@@ -176,7 +176,7 @@ export function Hero() {
                 <div className="text-start">
                   <h2 className="text-md leading-relaxed">Trade Pricing</h2>
                   <p className="text-sm leading-relaxed text-muted-foreground">
-                    Competitive rates built for trade accounts
+                    Competitive pricing with account and volume options
                   </p>
                 </div>
               </div>
@@ -189,7 +189,7 @@ export function Hero() {
                 <div className="text-start">
                   <h2 className="text-md leading-relaxed">Fast Delivery</h2>
                   <p className="text-sm leading-relaxed text-muted-foreground">
-                    Reliable dispatch with next day options available
+                    Fast, reliable dispatch to keep projects moving
                   </p>
                 </div>
               </div>
@@ -202,7 +202,7 @@ export function Hero() {
                 <div className="text-start">
                   <h2 className="text-md leading-relaxed">Trade Support</h2>
                   <p className="text-sm leading-relaxed text-muted-foreground">
-                    Local help from people who understand your work
+                    Local support from a team that understands installers
                   </p>
                 </div>
               </div>

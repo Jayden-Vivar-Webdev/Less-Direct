@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 
 export function About() {
   return (
@@ -9,21 +9,24 @@ export function About() {
             About LESS DIRECT
           </span>
           <h2 className="mt-3 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">
-            Founded by sparks, run for sparks
+            Built to support installers across Australia
           </h2>
           <p className="mt-4 leading-relaxed text-muted-foreground">
-            LESS DIRECT started on a van and a frustration: paying over the odds for
-            kit and waiting days for stock. So we built the wholesaler we always
-            wanted — deep stock, straight pricing and people who understand a deadline.
+            At LESS Direct, we understand what installers need: quality
+            products, competitive pricing, reliable stock and fast support. Our
+            core range includes Dahua Smart Dual Light, TiOC Pro and TiOC Duo
+            cameras, AI NVRs, alarms, intercoms and accessories.
           </p>
           <p className="mt-4 leading-relaxed text-muted-foreground">
-            Today we supply thousands of electricians across the country from our
-            trade counters and distribution hub, with the same promise: less hassle,
-            less markup, more time on the tools.
+            We also supply a growing range of electrical and solar products.
+            Whether you are purchasing for a single installation or a
+            large-scale project, our focus is simple: dependable service and
+            strong trade pricing that helps your business grow.
           </p>
           <Button
             size="lg"
             variant="outline"
+            nativeButton={false}
             className="mt-8 h-12 px-6 text-base font-semibold"
             render={<a href="#contact">Talk to our trade team</a>}
           />
@@ -38,5 +41,5 @@ export function About() {
         </div>
       </div>
     </section>
-  )
+  );
 }

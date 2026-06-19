@@ -3,19 +3,19 @@ const steps = [
     number: "1",
     title: "Open your trade account",
     description:
-      "Sign up in minutes with your business details. Get instant access to trade pricing and 30-day credit terms on approval.",
+      "Apply with your business details to unlock wholesale pricing, account support and project-based quotes.",
   },
   {
     number: "2",
-    title: "Build your order",
+    title: "Get pricing for your job",
     description:
-      "Search 12,000+ lines, save your regular kit to lists, and check live stock before you commit to the job.",
+      "Share your requirements and our team will provide competitive trade pricing, volume discounts and product guidance.",
   },
   {
     number: "3",
-    title: "Get it on site",
+    title: "Receive stock fast",
     description:
-      "Free next-day delivery to site or yard, or collect from the trade counter in 30 minutes. Sorted.",
+      "We dispatch quickly so installers can keep projects moving, with fast delivery support across NSW and beyond.",
   },
 ]
 
@@ -37,7 +37,7 @@ export function HowItWorks() {
             How it works
           </span>
           <h2 className="mt-3 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">
-            From account to install in three steps
+            From enquiry to delivery in three steps
           </h2>
         </div>
 

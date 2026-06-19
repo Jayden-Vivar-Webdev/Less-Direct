@@ -2,16 +2,16 @@ import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const benefits = [
-  "No minimum order and no membership fees ever",
-  "30-day credit terms available on approved accounts",
-  "Live stock visibility so you never get caught short",
-  "Bulk and project pricing for bigger jobs",
-  "Easy returns on unused stock within 60 days",
+  "Exclusive trade pricing tailored for installers",
+  "Volume discounts and project support for larger jobs",
+  "Reliable stock of genuine Dahua security solutions",
+  "Growing range of electrical and solar products",
+  "Fast delivery and responsive local support",
 ];
 
 export function Benefits() {
   return (
-    <section className="border-b border-border bg-black">
+    <section className="border-b border-border bg-card/40">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8">
         <div className="overflow-hidden rounded-xl border border-border">
           <img
@@ -23,15 +23,15 @@ export function Benefits() {
 
         <div>
           <span className="text-sm font-semibold uppercase tracking-widest text-primary">
-            Why electricians switch
+            Why installers switch
           </span>
           <h2 className="mt-3 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">
             The benefits of going LESS DIRECT
           </h2>
           <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">
-            We cut out the markup and the messing about. Just genuine stock,
-            honest trade prices and a service built around how electricians
-            actually work.
+            We focus on what trade customers value most: quality products,
+            competitive pricing, dependable stock and a team that supports your
+            jobs from quote to delivery.
           </p>
           <ul className="mt-8 space-y-4">
             {benefits.map((benefit) => (

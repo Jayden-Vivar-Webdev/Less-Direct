@@ -45,11 +45,11 @@ export function SiteHeader() {
 
           <div className="hidden items-center gap-3 md:flex md:justify-self-end">
             <a
-              href="tel:1800"
+              href="tel:+61424696960"
               className="flex items-center gap-2 text-sm font-semibold text-foreground"
             >
               <Phone className="size-4 text-primary" aria-hidden="true" />
-              1800 Less Direct
+              +6142 4696 960
             </a>
             <Button
               size="lg"

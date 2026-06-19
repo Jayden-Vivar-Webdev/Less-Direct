@@ -2,33 +2,33 @@ import { Logo } from "./logo";
 
 const columns = [
   {
-    title: "Shop",
+    title: "Products",
     links: [
-      "Cables & Wiring",
-      "Circuit Protection",
-      "Lighting & Fittings",
-      "Wiring Accessories",
-      "Full Catalogue",
+      { label: "Cables & Wiring", href: "#products" },
+      { label: "Circuit Protection", href: "#products" },
+      { label: "Lighting & Fittings", href: "#products" },
+      { label: "Wiring Accessories", href: "#products" },
+      { label: "Full Catalogue", href: "#products" },
     ],
   },
   {
     title: "Company",
     links: [
-      "About Us",
-      "Trade Counters",
-      "Careers",
-      "Sustainability",
-      "Contact",
+      { label: "About Us", href: "#about" },
+      { label: "Trade Discounts", href: "#contact" },
+      // { label: "Careers", href: "#contact" },
+      // { label: "Sustainability", href: "#about" },
+      { label: "Contact", href: "#contact" },
     ],
   },
   {
     title: "Support",
     links: [
-      "Open an Account",
-      "Delivery & Collection",
-      "Returns",
-      "Credit Terms",
-      "Help Centre",
+      { label: "Open an Account", href: "#contact" },
+      { label: "Request Pricing", href: "#contact" },
+      { label: "Contact Our Team", href: "#contact" },
+      { label: "Discuss a Project", href: "#contact" },
+      { label: "Apply for Wholesale Pricing", href: "#contact" },
     ],
   },
 ];
@@ -41,9 +41,22 @@ export function SiteFooter() {
           <div>
             <Logo className="h-40" />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
-              Trade only electrical wholesale. Genuine stock, honest prices and
-              next-day delivery built for electricians.
+              Built for trade installers across Australia. Quality security,
+              electrical and solar products with competitive pricing and
+              reliable support.
             </p>
+            <div className="mt-5 space-y-1 text-sm text-muted-foreground">
+              <p>
+                <strong>ABN:</strong> 48698722673
+              </p>
+              <p>
+                <strong>Licence Number:</strong> 000111212
+              </p>
+              <p>
+                <strong>Operating hours:</strong> Monday to Saturday 6am -
+                4.30pm
+              </p>
+            </div>
           </div>
           {columns.map((col) => (
             <div key={col.title}>
@@ -52,12 +65,12 @@ export function SiteFooter() {
               </h3>
               <ul className="mt-4 space-y-3">
                 {col.links.map((link) => (
-                  <li key={link}>
+                  <li key={link.label}>
                     <a
-                      href="#"
+                      href={link.href}
                       className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                     >
-                      {link}
+                      {link.label}
                     </a>
                   </li>
                 ))}
@@ -77,9 +90,9 @@ export function SiteFooter() {
             <a href="#" className="transition-colors hover:text-foreground">
               Terms
             </a>
-            <a href="#" className="transition-colors hover:text-foreground">
+            {/* <a href="#" className="transition-colors hover:text-foreground">
               Cookies
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

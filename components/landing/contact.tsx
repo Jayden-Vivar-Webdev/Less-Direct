@@ -37,9 +37,8 @@ export function Contact() {
               Open your trade account today
             </h2>
             <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">
-              Drop your details in and a member of our trade team will set you
-              up with pricing, credit options and stock access, usually within
-              the hour.
+              Tell us what you need and our team will help with account setup,
+              pricing, project supply and product recommendations.
             </p>
 
             <dl className="mt-10 space-y-6">
@@ -68,8 +67,8 @@ export function Contact() {
                 />
                 <h3 className="mt-4 text-xl font-bold">Request received</h3>
                 <p className="mt-2 max-w-sm text-sm text-muted-foreground">
-                  Thanks — our trade team will be in touch shortly to get your
-                  account live.
+                  Thanks, our team will be in touch shortly to discuss your
+                  account and pricing requirements.
                 </p>
               </div>
             ) : (
@@ -167,7 +166,8 @@ export function Contact() {
                   Open my trade account
                 </Button>
                 <p className="text-center text-xs text-muted-foreground">
-                  No fees, no minimum spend. Trade customers only.
+                  Trade-focused support for security, electrical and solar
+                  supply.
                 </p>
               </form>
             )}

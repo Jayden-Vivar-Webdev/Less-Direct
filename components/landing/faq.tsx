@@ -5,24 +5,24 @@ import { Plus, Minus } from "lucide-react"
 
 const faqs = [
   {
-    q: "Who can open a trade account?",
-    a: "Accounts are for electrical trade professionals — sole traders, contractors and businesses. We'll verify your trade status when you sign up, which usually takes under an hour.",
+    q: "Why should I switch from my current supplier?",
+    a: "LESS Direct is built for installers who need quality products, dependable stock, fast support and competitive pricing without the usual hassle.",
   },
   {
-    q: "Is there a minimum order value?",
-    a: "No. Order one socket or a full board's worth of kit — trade pricing applies either way. Free next-day delivery kicks in on orders over £75.",
+    q: "Can LESS Direct beat my current pricing?",
+    a: "In many cases, yes. We offer competitive trade pricing and can provide project-based quotes to help reduce total job cost.",
   },
   {
-    q: "How fast is delivery?",
-    a: "Order by 8pm Monday to Friday for free next-day delivery to your site or yard. You can also collect from our trade counter within 30 minutes of ordering.",
+    q: "Do you offer trade accounts and volume discounts?",
+    a: "Yes. Trade accounts are available for eligible installers and businesses, with volume discounts and project support for larger orders.",
   },
   {
-    q: "Do you offer credit terms?",
-    a: "Yes. Approved accounts get 30-day credit terms. You can apply when you open your account, or upgrade an existing cash account at any time.",
+    q: "How quickly can products be delivered?",
+    a: "Delivery time depends on stock and destination, but our focus is fast, reliable dispatch to keep your installations moving.",
   },
   {
-    q: "What's your returns policy?",
-    a: "Unused stock in its original packaging can be returned within 60 days for a full refund. Faulty goods are covered by manufacturer warranty and replaced free of charge.",
+    q: "Do you stock genuine Dahua products?",
+    a: "Yes. We specialise in genuine Dahua solutions including cameras, NVRs, alarms, intercoms, accessories and related networking products.",
   },
 ]
 
@@ -37,7 +37,7 @@ export function Faq() {
             FAQ
           </span>
           <h2 className="mt-3 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">
-            Questions, answered
+            Common installer questions
           </h2>
         </div>
 

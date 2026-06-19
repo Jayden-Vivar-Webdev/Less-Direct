@@ -16,11 +16,11 @@ export function CtaBanner() {
       <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="rounded-2xl border border-primary/40 bg-background/70 px-6 py-14 text-center backdrop-blur-sm sm:px-12">
           <h2 className="mx-auto max-w-2xl text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">
-            Less markup. Less hassle. More time on the tools.
+            Quality products. Trade pricing. Fast support.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-pretty leading-relaxed text-muted-foreground">
-            Join thousands of electricians ordering smarter with LESS DIRECT.
-            Open your trade account in minutes no fees, no catch.
+            Partner with LESS Direct for genuine security products and a growing
+            electrical and solar range, backed by dependable service.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <Button
