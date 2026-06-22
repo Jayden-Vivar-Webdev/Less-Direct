@@ -10,7 +10,7 @@ const brands = [
 export function TrustedBrands() {
   return (
     <section className="border-b border-border bg-card/40">
-      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[90rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-12">
         <p className="text-center text-xs font-semibold uppercase tracking-widest text-muted-foreground">
           Stocking the brands the trade trusts
         </p>

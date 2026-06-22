@@ -74,7 +74,7 @@ export function SiteHeader() {
       {open && (
         <div className="border-t border-border bg-background md:hidden">
           <nav
-            className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4"
+            className="mx-auto flex max-w-[90rem] flex-col gap-1 px-4 py-4"
             aria-label="Mobile"
           >
             {navLinks.map((link) => (

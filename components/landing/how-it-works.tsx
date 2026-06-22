@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { motion, Variants } from "framer-motion"
+import { motion, Variants } from "framer-motion";
 
 const steps = [
   {
@@ -21,7 +21,7 @@ const steps = [
     description:
       "We dispatch quickly so installers can keep projects moving, with fast delivery support across NSW and beyond.",
   },
-]
+];
 
 const intro: Variants = {
   hidden: { opacity: 0, y: 14 },
@@ -33,7 +33,7 @@ const intro: Variants = {
       ease: "easeOut",
     },
   },
-}
+};
 
 const stepsTimeline: Variants = {
   hidden: { opacity: 0 },
@@ -44,7 +44,7 @@ const stepsTimeline: Variants = {
       staggerChildren: 0.28,
     },
   },
-}
+};
 
 const stepItem: Variants = {
   hidden: { opacity: 0, y: 24 },
@@ -56,21 +56,29 @@ const stepItem: Variants = {
       ease: "easeOut",
     },
   },
-}
+};
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="relative overflow-hidden border-b border-border">
+    <section
+      id="how-it-works"
+      className="relative overflow-hidden border-y border-blue-500/45 shadow-[inset_0_20px_45px_-35px_rgba(37,99,235,0.8),inset_0_-20px_45px_-35px_rgba(37,99,235,0.8)]"
+    >
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-blue-400/90 shadow-[0_0_18px_rgba(37,99,235,0.95)]" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-blue-400/90 shadow-[0_0_18px_rgba(37,99,235,0.95)]" />
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-[url('/images/warehouse.png')] bg-cover bg-center opacity-20"
       />
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-black/60" />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-black/60"
+      />
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_10%,hsl(var(--primary)/0.14),transparent_44%),radial-gradient(circle_at_90%_85%,hsl(var(--primary)/0.1),transparent_42%)]"
       />
-      <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <div className="relative mx-auto max-w-[90rem] px-4 py-20 sm:px-6 lg:px-8 lg:py-30">
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -102,7 +110,9 @@ export function HowItWorks() {
               <span className="mx-auto flex size-14 items-center justify-center rounded-full border-2 border-primary text-xl font-extrabold text-primary">
                 {step.number}
               </span>
-              <h3 className="mt-5 text-lg font-bold tracking-tight">{step.title}</h3>
+              <h3 className="mt-5 text-lg font-bold tracking-tight">
+                {step.title}
+              </h3>
               <p className="mx-auto mt-2 max-w-xs text-sm leading-relaxed text-muted-foreground">
                 {step.description}
               </p>
@@ -111,5 +121,5 @@ export function HowItWorks() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

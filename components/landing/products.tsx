@@ -250,8 +250,25 @@ export function Products() {
   const hasMoreProducts = filteredProducts.length > 8;
 
   return (
-    <section id="products" className="border-b border-border bg-card/40">
-      <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+    <section
+      id="products"
+      className="relative border-b border-border bg-card/40"
+    >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 opacity-8"
+        style={{
+          backgroundImage: "url('/images/carbon-fibre-bg.jpg')",
+          backgroundSize: "380px 380px",
+          backgroundPosition: "center",
+          backgroundRepeat: "repeat",
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,hsl(var(--primary)/0.2),transparent_48%),radial-gradient(circle_at_85%_100%,hsl(var(--primary)/0.14),transparent_44%),linear-gradient(to_bottom,rgba(255,255,255,0.06),transparent_34%,rgba(0,0,0,0.52))]"
+      />
+      <div className="mx-auto max-w-[90rem] px-4 py-20 sm:px-6 lg:px-8 lg:py-30">
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -311,7 +328,7 @@ export function Products() {
             <motion.div
               key={product.sku}
               variants={storyCard}
-              className="flex h-full flex-col overflow-hidden rounded-xl border border-border bg-card transition-colors hover:border-primary/50"
+              className="flex h-full flex-col overflow-hidden rounded-xl border border-border bg-card z-10 transition-colors hover:border-primary/50"
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-background">
                 <img

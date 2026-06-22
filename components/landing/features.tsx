@@ -72,7 +72,23 @@ const storyCard: Variants = {
 
 export function Features() {
   return (
-    <section className="relative overflow-hidden border-b border-border bg-card/35">
+    <section className="relative overflow-hidden border-y border-blue-500/45 bg-card/35 shadow-[inset_0_20px_45px_-35px_rgba(37,99,235,0.8),inset_0_-20px_45px_-35px_rgba(37,99,235,0.8)]">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 opacity-8"
+        style={{
+          backgroundImage: "url('/images/carbon-fibre-bg.jpg')",
+          backgroundSize: "380px 380px",
+          backgroundPosition: "center",
+          backgroundRepeat: "repeat",
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,hsl(var(--primary)/0.2),transparent_48%),radial-gradient(circle_at_85%_100%,hsl(var(--primary)/0.14),transparent_44%),linear-gradient(to_bottom,rgba(255,255,255,0.06),transparent_34%,rgba(0,0,0,0.52))]"
+      />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-blue-400/90 shadow-[0_0_18px_rgba(37,99,235,0.95)]" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-blue-400/90 shadow-[0_0_18px_rgba(37,99,235,0.95)]" />
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-[url('/images/warehouse.png')] bg-cover bg-center opacity-20 md:bg-fixed"
@@ -85,7 +101,7 @@ export function Features() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_10%,hsl(var(--primary)/0.14),transparent_44%),radial-gradient(circle_at_90%_85%,hsl(var(--primary)/0.12),transparent_42%)]"
       />
-      <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[90rem] px-4 py-20 sm:px-6 lg:px-8 lg:py-30">
         <div className="relative">
           <motion.div
             initial="hidden"

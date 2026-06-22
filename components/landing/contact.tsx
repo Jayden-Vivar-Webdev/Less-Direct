@@ -29,8 +29,15 @@ export function Contact() {
   const [errorMessage, setErrorMessage] = useState("");
 
   return (
-    <section id="contact" className="border-b border-border">
-      <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+    <section
+      id="contact"
+      className="relative overflow-hidden border-y border-blue-500/45 shadow-[inset_0_20px_45px_-35px_rgba(37,99,235,0.8),inset_0_-20px_45px_-35px_rgba(37,99,235,0.8)]"
+    >
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-blue-400/90 shadow-[0_0_18px_rgba(37,99,235,0.95)]" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-blue-400/90 shadow-[0_0_18px_rgba(37,99,235,0.95)]" />
+      <div className="absolute inset-0 bg-[url('/images/warehouse-landscape.webp')] bg-cover bg-center opacity-20" />
+      <div className="absolute inset-0 bg-black/20" />
+      <div className="relative mx-auto max-w-[90rem] px-4 py-20 sm:px-6 lg:px-8 lg:py-40">
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
           <motion.div
             initial={{ opacity: 0, y: 60 }}
@@ -208,7 +215,7 @@ export function Contact() {
                     name="message"
                     rows={4}
                     className={fieldClass}
-                    placeholder="Tell us about the supplied you need and we'll sort your pricing."
+                    placeholder="Tell us about the supplies you need and we'll sort your pricing."
                   />
                 </div>
                 <Button

@@ -60,7 +60,7 @@ export function Hero() {
         initial="hidden"
         animate="show"
         variants={container}
-        className="relative mx-auto flex max-w-7xl justify-center px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32"
+        className="relative mx-auto flex max-w-[90rem] justify-center px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-36"
       >
         <div className="w-full max-w-2xl space-y-7 text-center">
           <motion.span
@@ -122,7 +122,7 @@ export function Hero() {
                 nativeButton={false}
                 className="h-12 w-full px-6 text-sm font-semibold sm:w-auto sm:text-base drop-shadow-[0_0_4px_rgba(2,112,239,0.9)]"
                 render={
-                  <a href="#products">
+                  <a href="#contact">
                     Open A Trade Account <ArrowRight className="size-4" />
                   </a>
                 }

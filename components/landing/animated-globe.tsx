@@ -8,11 +8,13 @@ export function AnimatedGlobe() {
   return (
     <section
       id="coverage"
-      className="relative overflow-hidden border-b border-border"
+      className="relative overflow-hidden border-y border-blue-500/45 shadow-[inset_0_20px_45px_-35px_rgba(37,99,235,0.8),inset_0_-20px_45px_-35px_rgba(37,99,235,0.8)]"
     >
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-blue-400/90 shadow-[0_0_18px_rgba(37,99,235,0.95)]" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-blue-400/90 shadow-[0_0_18px_rgba(37,99,235,0.95)]" />
       <div className="absolute inset-0 bg-[url('/images/warehouse-landscape.webp')] bg-cover bg-center opacity-25" />
       <div className="absolute inset-0 bg-black/10" />
-      <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
+      <div className="relative mx-auto grid max-w-[90rem] items-center gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-30">
         <motion.article
           initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -77,7 +79,7 @@ export function AnimatedGlobe() {
           </div>
         </motion.div>
       </div>
-      <div className="relative mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+      <div className="relative mx-auto max-w-[90rem] px-4 pb-20 sm:px-6 lg:px-8 lg:pb-24">
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}

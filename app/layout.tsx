@@ -12,8 +12,8 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "LESS DIRECT — Electrical Wholesale for Electricians",
   description:
-    "Trade-only electrical wholesaler. Cables, circuit protection, lighting and more — trade prices, next-day delivery, and stock you can rely on. Built for electricians.",
-  generator: "v0.app",
+    "Trade- nly electrical wholesaler. Cables, circuit protection, lighting and more — trade prices, next-day delivery, and stock you can rely on. Built for electricians.",
+  generator: "Nexa Web Development",
   icons: {
     icon: [
       {
