@@ -1,4 +1,7 @@
+"use client";
+
 import { ArrowUpRight } from "lucide-react";
+import { motion, Variants } from "framer-motion";
 
 const categories = [
   {
@@ -24,24 +27,63 @@ const categories = [
   },
 ];
 
+const intro: Variants = {
+  hidden: { opacity: 0, y: 12 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.35, ease: "easeOut" },
+  },
+};
+
+const grid: Variants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.08 },
+  },
+};
+
+const card: Variants = {
+  hidden: { opacity: 0, y: 14 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.35, ease: "easeOut" },
+  },
+};
+
 export function Categories() {
   return (
     <section id="categories" className="border-b border-border">
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <div className="max-w-2xl">
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.35 }}
+          variants={intro}
+          className="max-w-2xl"
+        >
           <span className="text-sm font-semibold uppercase tracking-widest text-primary">
             Shop by category
           </span>
           <h2 className="mt-3 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">
             Everything for the install, under one roof
           </h2>
-        </div>
+        </motion.div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={grid}
+          className="mt-12 grid gap-6 md:grid-cols-3"
+        >
           {categories.map((cat) => (
-            <a
+            <motion.a
               key={cat.title}
               href="#products"
+              variants={card}
               className="group relative overflow-hidden rounded-xl border border-border bg-card"
             >
               <div className="aspect-[4/3] overflow-hidden">
@@ -67,9 +109,9 @@ export function Categories() {
                   {cat.description}
                 </p>
               </div>
-            </a>
+            </motion.a>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

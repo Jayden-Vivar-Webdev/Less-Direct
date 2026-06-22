@@ -1,7 +1,9 @@
+"use client";
+
 import Earth from "@/components/landing/globe";
 import { Sparkles } from "@/components/landing/sparkles";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 export function AnimatedGlobe() {
   return (
     <section
@@ -11,7 +13,13 @@ export function AnimatedGlobe() {
       <div className="absolute inset-0 bg-[url('/images/warehouse-landscape.webp')] bg-cover bg-center opacity-25" />
       <div className="absolute inset-0 bg-black/10" />
       <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
-        <article className="text-center lg:text-left">
+        <motion.article
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.35 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="text-center lg:text-left"
+        >
           <span className="inline-flex items-center rounded-full border border-primary/35 bg-primary/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-primary sm:text-xs">
             Globally Proven Brands
           </span>
@@ -35,9 +43,15 @@ export function AnimatedGlobe() {
               render={<a href="#contact">Explore Our Full Range</a>}
             />
           </div>
-        </article>
+        </motion.article>
 
-        <div className="relative mx-auto w-full max-w-[420px]">
+        <motion.div
+          initial={{ opacity: 0, x: 60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.35 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.08 }}
+          className="relative mx-auto w-full max-w-[420px]"
+        >
           <div className="pointer-events-none absolute inset-8 rounded-full bg-[radial-gradient(circle_at_30%_30%,hsl(var(--primary)/0.3),transparent_60%)] blur-2xl" />
           <Earth
             className="max-w-[420px]"
@@ -61,10 +75,16 @@ export function AnimatedGlobe() {
               className="absolute inset-x-0 bottom-0 h-full w-full"
             />
           </div>
-        </div>
+        </motion.div>
       </div>
       <div className="relative mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-2xl border border-primary/40 px-6 py-14 text-center sm:px-12">
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.35 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="relative overflow-hidden rounded-2xl border border-primary/40 px-6 py-14 text-center sm:px-12"
+        >
           <div
             aria-hidden="true"
             className="pointer-events-none absolute inset-0 opacity-20"
@@ -88,7 +108,7 @@ export function AnimatedGlobe() {
               growing electrical and solar range, backed by dependable service.
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

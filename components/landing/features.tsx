@@ -1,4 +1,12 @@
-import { BadgePoundSterling, Headphones, ShieldCheck, Truck } from "lucide-react"
+"use client";
+
+import {
+  BadgePoundSterling,
+  Headphones,
+  ShieldCheck,
+  Truck,
+} from "lucide-react";
+import { motion, Variants } from "framer-motion";
 
 const features = [
   {
@@ -25,7 +33,42 @@ const features = [
     description:
       "Our team provides practical support on product selection, pricing and project supply requirements.",
   },
-]
+];
+
+const intro: Variants = {
+  hidden: { opacity: 0, y: 16 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.55,
+      ease: "easeOut",
+    },
+  },
+};
+
+const storyGrid: Variants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      delayChildren: 0.15,
+      staggerChildren: 0.22,
+    },
+  },
+};
+
+const storyCard: Variants = {
+  hidden: { opacity: 0, y: 24 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.55,
+      ease: "easeOut",
+    },
+  },
+};
 
 export function Features() {
   return (
@@ -34,14 +77,23 @@ export function Features() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-[url('/images/warehouse.png')] bg-cover bg-center opacity-20 md:bg-fixed"
       />
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-black/55" />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-black/55"
+      />
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_10%,hsl(var(--primary)/0.14),transparent_44%),radial-gradient(circle_at_90%_85%,hsl(var(--primary)/0.12),transparent_42%)]"
       />
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="relative">
-          <div className="mx-auto mb-10 max-w-3xl text-center">
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.5 }}
+            variants={intro}
+            className="mx-auto mb-10 max-w-3xl text-center"
+          >
             <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-primary">
               Why Trade Teams Choose Less Direct
             </span>
@@ -53,12 +105,19 @@ export function Features() {
               stock, competitive pricing and support that understands project
               timelines.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={storyGrid}
+            className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4"
+          >
             {features.map((feature) => (
-              <div
+              <motion.div
                 key={feature.title}
+                variants={storyCard}
                 className="group rounded-xl border border-white/10 bg-black/20 p-6 backdrop-blur-sm transition-colors duration-300 hover:border-primary/45"
               >
                 <span className="flex size-11 items-center justify-center rounded-lg border border-primary/35 bg-primary/10 text-primary transition-transform duration-300 group-hover:scale-105">
@@ -74,11 +133,11 @@ export function Features() {
                   {feature.description}
                 </p>
                 <div className="mt-4 h-px w-full bg-gradient-to-r from-primary/35 via-primary/10 to-transparent" />
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
-  )
+  );
 }

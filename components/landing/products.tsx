@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { ShoppingCart } from "lucide-react";
+import { motion, Variants } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
 type Product = {
@@ -178,6 +179,54 @@ const products: Product[] = [
   },
 ];
 
+const intro: Variants = {
+  hidden: { opacity: 0, y: 16 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
+
+const filters: Variants = {
+  hidden: { opacity: 0, y: 10 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.45,
+      ease: "easeOut",
+      delay: 0.08,
+    },
+  },
+};
+
+const storyGrid: Variants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      delayChildren: 0.1,
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const storyCard: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.45,
+      ease: "easeOut",
+    },
+  },
+};
+
 export function Products() {
   const [activeTag, setActiveTag] = useState("All");
   const [showAll, setShowAll] = useState(false);
@@ -203,7 +252,13 @@ export function Products() {
   return (
     <section id="products" className="border-b border-border bg-card/40">
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <div className="flex flex-wrap items-end justify-between gap-4">
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.4 }}
+          variants={intro}
+          className="flex flex-wrap items-end justify-between gap-4"
+        >
           <div className="max-w-2xl">
             <span className="text-sm font-semibold uppercase tracking-widest text-primary">
               Installer favourites
@@ -219,9 +274,15 @@ export function Products() {
             className="font-semibold"
             render={<a href="#contact">Request Pricing & Project Support</a>}
           />
-        </div>
+        </motion.div>
 
-        <div className="mt-8 flex flex-wrap gap-2">
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.35 }}
+          variants={filters}
+          className="mt-8 flex flex-wrap gap-2"
+        >
           {tags.map((tag) => (
             <Button
               key={tag}
@@ -237,12 +298,19 @@ export function Products() {
               {tag}
             </Button>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <motion.div
+          key={`${activeTag}-${showAll ? "all" : "top"}`}
+          initial="hidden"
+          animate="show"
+          variants={storyGrid}
+          className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+        >
           {visibleProducts.map((product) => (
-            <div
+            <motion.div
               key={product.sku}
+              variants={storyCard}
               className="flex h-full flex-col overflow-hidden rounded-xl border border-border bg-card transition-colors hover:border-primary/50"
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-background">
@@ -281,9 +349,9 @@ export function Products() {
                   }
                 />
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {hasMoreProducts ? (
           <div className="mt-8 flex justify-center">

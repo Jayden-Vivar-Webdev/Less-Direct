@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Clock, Mail, MapPin, Phone, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
 const details = [
   { icon: Phone, label: "Trade line", value: "1800 LESS DIRECT" },
@@ -31,7 +32,12 @@ export function Contact() {
     <section id="contact" className="border-b border-border">
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.35 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             <span className="text-sm font-semibold uppercase tracking-widest text-primary">
               Get started
             </span>
@@ -58,9 +64,15 @@ export function Contact() {
                 </div>
               ))}
             </dl>
-          </div>
+          </motion.div>
 
-          <div className="rounded-2xl border border-border bg-card p-6 sm:p-8">
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.35 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.08 }}
+            className="rounded-2xl border border-border bg-card p-6 sm:p-8"
+          >
             {submitted ? (
               <div className="flex h-full flex-col items-center justify-center py-16 text-center">
                 <CheckCircle2
@@ -218,7 +230,7 @@ export function Contact() {
                 </p>
               </form>
             )}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
+import { motion } from "framer-motion";
 
 const faqs = [
   {
@@ -41,11 +42,34 @@ export function Faq() {
           </h2>
         </div>
 
-        <div className="mt-12 divide-y divide-border border-y border-border">
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{
+            hidden: {},
+            show: {
+              transition: {
+                staggerChildren: 0.12,
+              },
+            },
+          }}
+          className="mt-12 divide-y divide-border border-y border-border"
+        >
           {faqs.map((faq, i) => {
             const isOpen = open === i;
             return (
-              <div key={faq.q}>
+              <motion.div
+                key={faq.q}
+                variants={{
+                  hidden: { opacity: 0, y: 60 },
+                  show: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 0.55, ease: "easeOut" },
+                  },
+                }}
+              >
                 <button
                   type="button"
                   className="flex w-full items-center justify-between gap-4 py-5 text-left"
@@ -66,10 +90,10 @@ export function Faq() {
                     {faq.a}
                   </p>
                 )}
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

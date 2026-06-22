@@ -1,10 +1,18 @@
-import { Button } from "@/components/ui/button";
+"use client";
+
+import { motion } from "framer-motion";
 
 export function About() {
   return (
     <section id="about" className="border-b border-border">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8">
-        <div className="order-2 lg:order-2">
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.35 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="order-2 lg:order-2"
+        >
           <span className="text-sm font-semibold uppercase tracking-widest text-primary">
             About LESS DIRECT
           </span>
@@ -30,15 +38,21 @@ export function About() {
             className="mt-8 h-12 px-6 text-base font-semibold"
             render={<a href="#contact">Talk to our trade team</a>}
           /> */}
-        </div>
+        </motion.div>
 
-        <div className="order-1 overflow-hidden rounded-xl border border-border lg:order-1">
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.35 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.08 }}
+          className="order-1 overflow-hidden rounded-xl border border-border lg:order-1"
+        >
           <img
             src="/images/less-warehouse.png"
             alt="LESS DIRECT trade counter team helping an electrician"
             className="aspect-[4/3] size-full object-cover"
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );
