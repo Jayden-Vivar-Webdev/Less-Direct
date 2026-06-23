@@ -3,7 +3,27 @@
 import Earth from "@/components/landing/globe";
 import { Sparkles } from "@/components/landing/sparkles";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
+
+const articleContainer: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.05,
+    },
+  },
+};
+
+const articleItem: Variants = {
+  hidden: { opacity: 0, x: -40 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.55, ease: "easeOut" },
+  },
+};
+
 export function AnimatedGlobe() {
   return (
     <section
@@ -16,35 +36,47 @@ export function AnimatedGlobe() {
       <div className="absolute inset-0 bg-black/10" />
       <div className="relative mx-auto grid max-w-[90rem] items-center gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-30">
         <motion.article
-          initial={{ opacity: 0, x: -60 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          variants={articleContainer}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true, amount: 0.35 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center lg:text-left"
         >
-          <span className="inline-flex items-center rounded-full border border-primary/35 bg-primary/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-primary sm:text-xs">
+          <motion.span
+            variants={articleItem}
+            className="inline-flex items-center rounded-full border border-primary/35 bg-primary/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-primary sm:text-xs"
+          >
             Globally Proven Brands
-          </span>
-          <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">
+          </motion.span>
+          <motion.h2
+            variants={articleItem}
+            className="mt-4 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl"
+          >
             Globally trusted products,
             <span className="text-primary">
               {" "}
               supplied for Australian trades.
             </span>
-          </h2>
-          <p className="mx-auto mt-5 max-w-xl text-pretty leading-relaxed text-muted-foreground lg:mx-0">
+          </motion.h2>
+          <motion.p
+            variants={articleItem}
+            className="mx-auto mt-5 max-w-xl text-pretty leading-relaxed text-muted-foreground lg:mx-0"
+          >
             Our security, electrical and solar range is used on projects around
             the world. LESS Direct brings those trusted products to installers
             across Australia with local stock, trade pricing and fast support.
-          </p>
-          <div className="mt-7 flex justify-center lg:justify-start">
+          </motion.p>
+          <motion.div
+            variants={articleItem}
+            className="mt-7 flex justify-center lg:justify-start"
+          >
             <Button
               size="lg"
               nativeButton={false}
               className="h-12 px-6 text-sm font-semibold sm:text-base"
               render={<a href="#contact">Explore Our Full Range</a>}
             />
-          </div>
+          </motion.div>
         </motion.article>
 
         <motion.div
