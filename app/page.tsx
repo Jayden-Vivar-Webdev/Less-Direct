@@ -41,8 +41,8 @@ export default function Page() {
       <SiteFooter />
       <Script
         src="https://client-revision-widget.vercel.app/widget.js"
-        data-to="you@youragency.com"
-        data-project="Client Project"
+        data-to="contact@nexawebdev.com"
+        data-project="Client Project - Less Direct"
         data-side="left"
         data-accent="#2563eb"
         defer
