@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 
 const steps = [
   {
@@ -23,31 +23,8 @@ const steps = [
   },
 ];
 
-const intro: Variants = {
+const intro = {
   hidden: { opacity: 0, y: 14 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  },
-};
-
-const stepsTimeline: Variants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      delayChildren: 0.15,
-      staggerChildren: 0.28,
-    },
-  },
-};
-
-const stepItem: Variants = {
-  hidden: { opacity: 0, y: 24 },
   show: {
     opacity: 1,
     y: 0,
@@ -94,19 +71,9 @@ export function HowItWorks() {
           </h2>
         </motion.div>
 
-        <motion.div
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={stepsTimeline}
-          className="mt-14 grid gap-10 md:grid-cols-3"
-        >
+        <div className="mt-14 grid gap-10 md:grid-cols-3">
           {steps.map((step) => (
-            <motion.div
-              key={step.number}
-              variants={stepItem}
-              className="relative text-center"
-            >
+            <div key={step.number} className="relative text-center">
               <span className="mx-auto flex size-14 items-center justify-center rounded-full border-2 border-primary text-xl font-extrabold text-primary">
                 {step.number}
               </span>
@@ -116,9 +83,9 @@ export function HowItWorks() {
               <p className="mx-auto mt-2 max-w-xs text-sm leading-relaxed text-muted-foreground">
                 {step.description}
               </p>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

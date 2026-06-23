@@ -35,57 +35,33 @@ export function AnimatedGlobe() {
       <div className="absolute inset-0 bg-[url('/images/warehouse-landscape.webp')] bg-cover bg-center opacity-25" />
       <div className="absolute inset-0 bg-black/10" />
       <div className="relative mx-auto grid max-w-[90rem] items-center gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-30">
-        <motion.article
-          variants={articleContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.35 }}
-          className="text-center lg:text-left"
-        >
-          <motion.span
-            variants={articleItem}
-            className="inline-flex items-center rounded-full border border-primary/35 bg-primary/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-primary sm:text-xs"
-          >
+        <article className="text-center lg:text-left">
+          <span className="inline-flex items-center rounded-full border border-primary/35 bg-primary/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-primary sm:text-xs">
             Globally Proven Brands
-          </motion.span>
-          <motion.h2
-            variants={articleItem}
-            className="mt-4 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl"
-          >
+          </span>
+          <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">
             Globally trusted products,
             <span className="text-primary">
               {" "}
               supplied for Australian trades.
             </span>
-          </motion.h2>
-          <motion.p
-            variants={articleItem}
-            className="mx-auto mt-5 max-w-xl text-pretty leading-relaxed text-muted-foreground lg:mx-0"
-          >
+          </h2>
+          <p className="mx-auto mt-5 max-w-xl text-pretty leading-relaxed text-muted-foreground lg:mx-0">
             Our security, electrical and solar range is used on projects around
             the world. LESS Direct brings those trusted products to installers
             across Australia with local stock, trade pricing and fast support.
-          </motion.p>
-          <motion.div
-            variants={articleItem}
-            className="mt-7 flex justify-center lg:justify-start"
-          >
+          </p>
+          <div className="mt-7 flex justify-center lg:justify-start">
             <Button
               size="lg"
               nativeButton={false}
               className="h-12 px-6 text-sm font-semibold sm:text-base"
               render={<a href="#contact">Explore Our Full Range</a>}
             />
-          </motion.div>
-        </motion.article>
+          </div>
+        </article>
 
-        <motion.div
-          initial={{ opacity: 0, x: 60 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.35 }}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.08 }}
-          className="relative mx-auto w-full max-w-[420px]"
-        >
+        <div className="relative mx-auto w-full max-w-[420px]">
           <div className="pointer-events-none absolute inset-8 rounded-full bg-[radial-gradient(circle_at_30%_30%,hsl(var(--primary)/0.3),transparent_60%)] blur-2xl" />
           <Earth
             className="max-w-[420px]"
@@ -109,16 +85,10 @@ export function AnimatedGlobe() {
               className="absolute inset-x-0 bottom-0 h-full w-full"
             />
           </div>
-        </motion.div>
+        </div>
       </div>
       <div className="relative mx-auto max-w-[90rem] px-4 pb-20 sm:px-6 lg:px-8 lg:pb-24">
-        <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.35 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="relative overflow-hidden rounded-2xl border border-primary/40 px-6 py-14 text-center sm:px-12"
-        >
+        <div className="relative overflow-hidden rounded-2xl border border-primary/40 px-6 py-14 text-center sm:px-12">
           <div
             aria-hidden="true"
             className="pointer-events-none absolute inset-0 opacity-20"
@@ -142,7 +112,7 @@ export function AnimatedGlobe() {
               growing electrical and solar range, backed by dependable service.
             </p>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

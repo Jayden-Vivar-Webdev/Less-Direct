@@ -3,22 +3,22 @@
 import { BadgeDollarSign, Boxes, Headphones } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 
-const aboutTextContainer: Variants = {
+const cardsContainer: Variants = {
   hidden: {},
   visible: {
     transition: {
+      delayChildren: 0.08,
       staggerChildren: 0.12,
-      delayChildren: 0.05,
     },
   },
 };
 
-const aboutTextItem: Variants = {
-  hidden: { opacity: 0, y: 24 },
+const cardItem: Variants = {
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.55, ease: "easeOut" },
+    transition: { duration: 0.45, ease: "easeOut" },
   },
 };
 
@@ -61,54 +61,36 @@ export function About() {
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,hsl(var(--primary)/0.2),transparent_48%),radial-gradient(circle_at_85%_100%,hsl(var(--primary)/0.14),transparent_44%),linear-gradient(to_bottom,rgba(255,255,255,0.06),transparent_34%,rgba(0,0,0,0.52))]"
       />
       <div className="mx-auto grid max-w-[90rem] items-center gap-12 px-4 py-20 sm:px-6 xl:grid-cols-2 lg:px-8 lg:py-40">
-        <motion.div
-          variants={aboutTextContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.35 }}
-          className="order-2 lg:order-2"
-        >
-          <motion.span
-            variants={aboutTextItem}
-            className="text-sm font-semibold uppercase tracking-widest text-primary"
-          >
+        <div className="order-2 lg:order-2">
+          <span className="text-sm font-semibold uppercase tracking-widest text-primary">
             About LESS DIRECT
-          </motion.span>
-          <motion.h2
-            variants={aboutTextItem}
-            className="mt-3 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl"
-          >
+          </span>
+          <h2 className="mt-3 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">
             Built to support installers across Australia
-          </motion.h2>
-          <motion.p
-            variants={aboutTextItem}
-            className="mt-4 leading-relaxed text-muted-foreground"
-          >
+          </h2>
+          <p className="mt-4 leading-relaxed text-muted-foreground">
             At LESS Direct, we understand what installers need: quality
             products, competitive pricing, reliable stock and fast support. Our
             core range includes Dahua Smart Dual Light, TiOC Pro and TiOC Duo
             cameras, AI NVRs, alarms, intercoms and accessories.
-          </motion.p>
-          <motion.p
-            variants={aboutTextItem}
-            className="mt-4 leading-relaxed text-muted-foreground"
-          >
+          </p>
+          <p className="mt-4 leading-relaxed text-muted-foreground">
             We also supply a growing range of electrical and solar products.
             Whether you are purchasing for a single installation or a
             large-scale project, our focus is simple: dependable service and
             strong trade pricing that helps your business grow.
-          </motion.p>
+          </p>
           <motion.div
-            variants={aboutTextItem}
+            variants={cardsContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.25 }}
             className="mt-8 grid gap-5 sm:grid-cols-3"
           >
             {highlights.map((item) => (
               <motion.div
                 key={item.title}
-                initial={{ opacity: 0, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.4, ease: "easeOut" }}
+                variants={cardItem}
                 className="group rounded-xl border border-white/10 bg-black/20 p-6 backdrop-blur-sm transition-colors duration-300 hover:border-primary/45"
               >
                 <span className="flex size-11 items-center justify-center rounded-lg border border-primary/35 bg-primary/10 text-primary transition-transform duration-300 group-hover:scale-105">
@@ -134,21 +116,15 @@ export function About() {
             className="mt-8 h-12 px-6 text-base font-semibold"
             render={<a href="#contact">Talk to our trade team</a>}
           /> */}
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.35 }}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.08 }}
-          className="order-1 overflow-hidden rounded-xl border border-border lg:order-1"
-        >
+        <div className="order-1 overflow-hidden rounded-xl border border-border lg:order-1">
           <img
             src="/images/less-warehouse.png"
             alt="LESS DIRECT trade counter team helping an electrician"
             className="aspect-[4/3] size-full object-cover"
           />
-        </motion.div>
+        </div>
       </div>
     </section>
   );

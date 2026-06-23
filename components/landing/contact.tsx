@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Clock, Mail, MapPin, Phone, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 const details = [
   { icon: Phone, label: "Trade line", value: "1800 LESS DIRECT" },
@@ -23,6 +23,25 @@ const details = [
 const fieldClass =
   "w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/40";
 
+const detailsContainer: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      delayChildren: 0.08,
+      staggerChildren: 0.12,
+    },
+  },
+};
+
+const detailItem: Variants = {
+  hidden: { opacity: 0, x: -24 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.45, ease: "easeOut" },
+  },
+};
+
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -39,12 +58,7 @@ export function Contact() {
       <div className="absolute inset-0 bg-black/20" />
       <div className="relative mx-auto max-w-[90rem] px-4 py-20 sm:px-6 lg:px-8 lg:py-40">
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
-          <motion.div
-            initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.35 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          >
+          <div>
             <span className="text-sm font-semibold uppercase tracking-widest text-primary">
               Get started
             </span>
@@ -56,9 +70,19 @@ export function Contact() {
               pricing, project supply and product recommendations.
             </p>
 
-            <dl className="mt-10 space-y-6">
+            <motion.dl
+              variants={detailsContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.35 }}
+              className="mt-10 space-y-6"
+            >
               {details.map((d) => (
-                <div key={d.label} className="flex items-start gap-4">
+                <motion.div
+                  key={d.label}
+                  variants={detailItem}
+                  className="flex items-start gap-4"
+                >
                   <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
                     <d.icon className="size-5" aria-hidden="true" />
                   </span>
@@ -68,18 +92,12 @@ export function Contact() {
                     </dt>
                     <dd className="mt-0.5 font-medium">{d.value}</dd>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </dl>
-          </motion.div>
+            </motion.dl>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.35 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.08 }}
-            className="rounded-2xl border border-border bg-card p-6 sm:p-8"
-          >
+          <div className="rounded-2xl border border-border bg-card p-6 sm:p-8">
             {submitted ? (
               <div className="flex h-full flex-col items-center justify-center py-16 text-center">
                 <CheckCircle2
@@ -237,7 +255,7 @@ export function Contact() {
                 </p>
               </form>
             )}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

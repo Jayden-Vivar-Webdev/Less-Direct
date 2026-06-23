@@ -54,6 +54,7 @@ export async function POST(request: Request) {
     const apiKey = process.env.RESEND_API_KEY;
     const from = process.env.RESEND_FROM_EMAIL;
     const customerTemplateId = process.env.RESEND_CUSTOMER_TEMPLATE_ID;
+    const internalTemplateId = process.env.RESEND_INTERNAL_TEMPLATE_ID;
     const internalTo = process.env.RESEND_INTERNAL_TO_EMAIL;
 
     if (!apiKey || !from || !customerTemplateId || !internalTo) {
@@ -91,28 +92,33 @@ export async function POST(request: Request) {
       template: {
         id: customerTemplateId,
         variables: {
-          NAME: name,
-          COMPANY: company || "Not provided",
-          EMAIL: email,
-          PHONE: phone || "Not provided",
-          MESSAGE: message || "Not provided",
+          CONTACT_NAME: name,
         },
       },
     };
+
+    const submittedAt = new Date().toLocaleString("en-AU", {
+      timeZone: "Australia/Sydney",
+      dateStyle: "medium",
+      timeStyle: "short",
+    });
 
     const internalEmailPayload = {
       from,
       to: [internalTo],
       subject: `New contact form enquiry from ${name}`,
       reply_to: email,
-      html: `
-        <h2>New contact form enquiry</h2>
-        <p><strong>Name:</strong> ${safeName}</p>
-        <p><strong>Company:</strong> ${safeCompany}</p>
-        <p><strong>Email:</strong> ${safeEmail}</p>
-        <p><strong>Phone:</strong> ${safePhone}</p>
-        <p><strong>Message:</strong><br/>${safeMessage}</p>
-      `,
+      template: {
+        id: internalTemplateId,
+        variables: {
+          client_name: safeName,
+          client_email: safeEmail,
+          client_phone: safePhone,
+          client_company: safeCompany,
+          submitted_at: submittedAt,
+          client_message: safeMessage,
+        },
+      },
     };
 
     const [customerResult, internalResult] = await Promise.all([

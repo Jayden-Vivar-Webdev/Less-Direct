@@ -6,7 +6,7 @@ import {
   ShieldCheck,
   Truck,
 } from "lucide-react";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 
 const features = [
   {
@@ -35,31 +35,8 @@ const features = [
   },
 ];
 
-const intro: Variants = {
+const intro = {
   hidden: { opacity: 0, y: 16 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.55,
-      ease: "easeOut",
-    },
-  },
-};
-
-const storyGrid: Variants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      delayChildren: 0.15,
-      staggerChildren: 0.22,
-    },
-  },
-};
-
-const storyCard: Variants = {
-  hidden: { opacity: 0, y: 24 },
   show: {
     opacity: 1,
     y: 0,
@@ -123,17 +100,10 @@ export function Features() {
             </p>
           </motion.div>
 
-          <motion.div
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={storyGrid}
-            className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4"
-          >
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {features.map((feature) => (
-              <motion.div
+              <div
                 key={feature.title}
-                variants={storyCard}
                 className="group rounded-xl border border-white/10 bg-black/20 p-6 backdrop-blur-sm transition-colors duration-300 hover:border-primary/45"
               >
                 <span className="flex size-11 items-center justify-center rounded-lg border border-primary/35 bg-primary/10 text-primary transition-transform duration-300 group-hover:scale-105">
@@ -149,9 +119,9 @@ export function Features() {
                   {feature.description}
                 </p>
                 <div className="mt-4 h-px w-full bg-gradient-to-r from-primary/35 via-primary/10 to-transparent" />
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
