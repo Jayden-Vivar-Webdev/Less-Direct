@@ -15,6 +15,7 @@ import { CtaBanner } from "@/components/landing/cta-banner";
 import { SiteFooter } from "@/components/landing/site-footer";
 import { FloatingCta } from "@/components/landing/floating-cta";
 import { AnimatedGlobe } from "@/components/landing/animated-globe";
+import Script from "next/script";
 
 export default function Page() {
   return (
@@ -38,6 +39,14 @@ export default function Page() {
       </main>
       <FloatingCta />
       <SiteFooter />
+      <Script
+        src="https://client-revision-widget.vercel.app/widget.js"
+        data-to="you@youragency.com"
+        data-project="Client Project"
+        data-side="left"
+        data-accent="#2563eb"
+        defer
+      />
     </div>
   );
 }
