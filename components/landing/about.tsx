@@ -1,7 +1,26 @@
 "use client";
 
 import { BadgeDollarSign, Boxes, Headphones } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
+
+const aboutTextContainer: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.05,
+    },
+  },
+};
+
+const aboutTextItem: Variants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, ease: "easeOut" },
+  },
+};
 
 const highlights = [
   {
@@ -43,31 +62,46 @@ export function About() {
       />
       <div className="mx-auto grid max-w-[90rem] items-center gap-12 px-4 py-20 sm:px-6 xl:grid-cols-2 lg:px-8 lg:py-40">
         <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          variants={aboutTextContainer}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true, amount: 0.35 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
           className="order-2 lg:order-2"
         >
-          <span className="text-sm font-semibold uppercase tracking-widest text-primary">
+          <motion.span
+            variants={aboutTextItem}
+            className="text-sm font-semibold uppercase tracking-widest text-primary"
+          >
             About LESS DIRECT
-          </span>
-          <h2 className="mt-3 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">
+          </motion.span>
+          <motion.h2
+            variants={aboutTextItem}
+            className="mt-3 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl"
+          >
             Built to support installers across Australia
-          </h2>
-          <p className="mt-4 leading-relaxed text-muted-foreground">
+          </motion.h2>
+          <motion.p
+            variants={aboutTextItem}
+            className="mt-4 leading-relaxed text-muted-foreground"
+          >
             At LESS Direct, we understand what installers need: quality
             products, competitive pricing, reliable stock and fast support. Our
             core range includes Dahua Smart Dual Light, TiOC Pro and TiOC Duo
             cameras, AI NVRs, alarms, intercoms and accessories.
-          </p>
-          <p className="mt-4 leading-relaxed text-muted-foreground">
+          </motion.p>
+          <motion.p
+            variants={aboutTextItem}
+            className="mt-4 leading-relaxed text-muted-foreground"
+          >
             We also supply a growing range of electrical and solar products.
             Whether you are purchasing for a single installation or a
             large-scale project, our focus is simple: dependable service and
             strong trade pricing that helps your business grow.
-          </p>
-          <div className="mt-8 grid gap-5 sm:grid-cols-3">
+          </motion.p>
+          <motion.div
+            variants={aboutTextItem}
+            className="mt-8 grid gap-5 sm:grid-cols-3"
+          >
             {highlights.map((item) => (
               <motion.div
                 key={item.title}
@@ -92,7 +126,7 @@ export function About() {
                 <div className="mt-4 h-px w-full bg-gradient-to-r from-primary/35 via-primary/10 to-transparent" />
               </motion.div>
             ))}
-          </div>
+          </motion.div>
           {/* <Button
             size="lg"
             variant="outline"
