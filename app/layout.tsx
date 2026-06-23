@@ -13,6 +13,26 @@ export const metadata: Metadata = {
   title: "LESS DIRECT — Electrical Wholesale for Electricians",
   description:
     "Trade- nly electrical wholesaler. Cables, circuit protection, lighting and more — trade prices, next-day delivery, and stock you can rely on. Built for electricians.",
+  openGraph: {
+    title: "LESS DIRECT — Electrical Wholesale for Electricians",
+    description:
+      "Trade- nly electrical wholesaler. Cables, circuit protection, lighting and more — trade prices, next-day delivery, and stock you can rely on. Built for electricians.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "LESS DIRECT",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "LESS DIRECT — Electrical Wholesale for Electricians",
+    description:
+      "Trade- nly electrical wholesaler. Cables, circuit protection, lighting and more — trade prices, next-day delivery, and stock you can rely on. Built for electricians.",
+    images: ["/og-image.png"],
+  },
   generator: "Nexa Web Development",
   icons: {
     icon: [
