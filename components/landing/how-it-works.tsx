@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 const steps = [
   {
@@ -23,13 +23,35 @@ const steps = [
   },
 ];
 
-const intro = {
+const intro: Variants = {
   hidden: { opacity: 0, y: 14 },
   show: {
     opacity: 1,
     y: 0,
     transition: {
       duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
+
+const stepsContainer: Variants = {
+  hidden: {},
+  show: {
+    transition: {
+      delayChildren: 0.1,
+      staggerChildren: 0.18,
+    },
+  },
+};
+
+const stepItem: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.45,
       ease: "easeOut",
     },
   },
@@ -45,7 +67,7 @@ export function HowItWorks() {
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-blue-400/90 shadow-[0_0_18px_rgba(37,99,235,0.95)]" />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[url('/images/warehouse.png')] bg-cover bg-center opacity-20"
+        className="pointer-events-none absolute inset-0 bg-[url('/images/warehouse.png')] bg-cover bg-center opacity-80"
       />
       <div
         aria-hidden="true"
@@ -71,9 +93,19 @@ export function HowItWorks() {
           </h2>
         </motion.div>
 
-        <div className="mt-14 grid gap-10 md:grid-cols-3">
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={stepsContainer}
+          className="mt-14 grid gap-10 md:grid-cols-3"
+        >
           {steps.map((step) => (
-            <div key={step.number} className="relative text-center">
+            <motion.div
+              key={step.number}
+              variants={stepItem}
+              className="relative text-center"
+            >
               <span className="mx-auto flex size-14 items-center justify-center rounded-full border-2 border-primary text-xl font-extrabold text-primary">
                 {step.number}
               </span>
@@ -83,9 +115,9 @@ export function HowItWorks() {
               <p className="mx-auto mt-2 max-w-xs text-sm leading-relaxed text-muted-foreground">
                 {step.description}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
