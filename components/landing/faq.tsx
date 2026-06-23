@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
 
 const faqs = [
   {
@@ -53,19 +54,34 @@ export function Faq() {
                   aria-expanded={isOpen}
                 >
                   <span className="text-base font-semibold">{faq.q}</span>
-                  <span className="flex size-7 shrink-0 items-center justify-center rounded-full border border-border text-primary">
+                  <motion.span
+                    animate={{ rotate: isOpen ? 180 : 0 }}
+                    transition={{ duration: 0.22, ease: "easeOut" }}
+                    className="flex size-7 shrink-0 items-center justify-center rounded-full border border-border text-primary"
+                  >
                     {isOpen ? (
                       <Minus className="size-4" />
                     ) : (
                       <Plus className="size-4" />
                     )}
-                  </span>
+                  </motion.span>
                 </button>
-                {isOpen && (
-                  <p className="pb-5 pr-10 text-sm leading-relaxed text-muted-foreground">
-                    {faq.a}
-                  </p>
-                )}
+                <AnimatePresence initial={false}>
+                  {isOpen ? (
+                    <motion.div
+                      key="answer"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.28, ease: "easeOut" }}
+                      className="overflow-hidden"
+                    >
+                      <p className="pb-5 pr-10 text-sm leading-relaxed text-muted-foreground">
+                        {faq.a}
+                      </p>
+                    </motion.div>
+                  ) : null}
+                </AnimatePresence>
               </div>
             );
           })}
