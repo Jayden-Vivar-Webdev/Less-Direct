@@ -5,8 +5,8 @@ const columns = [
     title: "Products",
     links: [
       { label: "Cables & Wiring", href: "#products" },
-      { label: "Circuit Protection", href: "#products" },
-      { label: "Lighting & Fittings", href: "#products" },
+      { label: "Security Cameras", href: "#products" },
+      { label: "Security Systems", href: "#products" },
       { label: "Wiring Accessories", href: "#products" },
       { label: "Full Catalogue", href: "#products" },
     ],
@@ -47,10 +47,10 @@ export function SiteFooter() {
             </p>
             <div className="mt-5 space-y-1 text-sm text-muted-foreground">
               <p>
-                <strong>ABN:</strong> 48698722673
+                <strong>ABN:</strong> 48 698 722 673
               </p>
               <p>
-                <strong>Licence Number:</strong> 000111212
+                <strong>Licence Number:</strong> 000 111 212
               </p>
               <p>
                 <strong>Operating hours:</strong> Monday to Saturday 6am -
