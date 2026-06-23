@@ -2,7 +2,7 @@ import { PhoneCall } from "lucide-react";
 
 export function FloatingCta() {
   return (
-    <div className="pointer-events-none fixed bottom-5 right-5 z-[60] bottom-12 sm:bottom-7 sm:right-7">
+    <div className="pointer-events-none fixed bottom-5 right-5 z-[60] sm:bottom-7 sm:right-7">
       <a
         href="tel:+61424696960"
         aria-label="Call Less Direct"
