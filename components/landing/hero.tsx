@@ -253,7 +253,7 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="flex flex-row w-1/3 mx-auto mt-10">
+          <div className="flex flex-row w-1/2 lg:w-1/3 mx-auto mt-10">
             <div>
               <img className="" src="/images/dahua-logo.png" alt="Dahua Logo" />
             </div>
