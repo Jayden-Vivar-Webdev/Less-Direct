@@ -202,7 +202,7 @@ export function Contact() {
                       type="email"
                       required
                       className={fieldClass}
-                      placeholder="you@company.com"
+                      placeholder="your@company.com"
                     />
                   </div>
                   <div>
@@ -250,7 +250,7 @@ export function Contact() {
                   </p>
                 ) : null}
                 <p className="text-center text-xs text-muted-foreground">
-                  Trade-focused support for security, electrical and solar
+                  Trade focused support for security, electrical and solar
                   supply.
                 </p>
               </form>
