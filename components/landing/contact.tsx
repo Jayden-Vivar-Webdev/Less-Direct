@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { motion, Variants } from "framer-motion";
 
 const details = [
-  { icon: Phone, label: "Trade line", value: "1800 LESS DIRECT" },
+  { icon: Phone, label: "Trade line", value: "+61 424 696 960" },
   { icon: Mail, label: "Email", value: "sales@lessdirect.com.au" },
   {
     icon: MapPin,
