@@ -8,21 +8,21 @@ const categories = [
     count: "WizMind 8 Series...",
     image: "/images/network-cameras.png",
     description:
-      "Full suite of all Dahua network cameras for home and commercial purposes",
+      "Full suite of Dahua network cameras for residential and commercial purposes.",
   },
   {
     title: "PT Cameras",
     count: "IP PT 3 Series...",
     image: "/images/PT-camera.png",
     description:
-      "Pan tilt cameras for percisions CCTV operations. Optional models avaliable.",
+      "Pan-tilt cameras for precision CCTV operations. Optional models available.",
   },
   {
     title: "PTZ Cameras",
     count: "X-Spans Series...",
     image: "/images/PTZ-camera.png",
     description:
-      "Pan, Tilt, & Zoom cameras available. This provides full suveriance of properties & commercial spaces.",
+      "Pan, tilt and zoom cameras available, providing full surveillance of properties and commercial spaces.",
   },
 ];
 
