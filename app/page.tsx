@@ -4,6 +4,7 @@ import { TrustedBrands } from "@/components/landing/trusted-brands";
 import { Features } from "@/components/landing/features";
 import { Stats } from "@/components/landing/stats";
 import { Categories } from "@/components/landing/categories";
+import { Divisions } from "@/components/landing/divisions";
 import { Products } from "@/components/landing/products";
 import { HowItWorks } from "@/components/landing/how-it-works";
 import { Benefits } from "@/components/landing/benefits";
@@ -25,6 +26,7 @@ export default function Page() {
         <Hero />
         <TrustedBrands />
         <Stats />
+        <Divisions />
         <Categories />
         <Features />
         <Products />
