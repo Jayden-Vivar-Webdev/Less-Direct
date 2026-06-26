@@ -98,8 +98,13 @@ export function Hero() {
             </p>
           </motion.div>
 
-          <div className=" mt-3 flex w-full bg-primary h-[0.1]"></div>
-
+          <motion.div
+            variants={item}
+            className="relative mx-auto mt-4 h-[2px] w-full max-w-xl overflow-visible rounded-full bg-gradient-to-r from-transparent via-blue-500 to-transparent shadow-[0_0_16px_rgba(56,189,248,0.8)]"
+            aria-hidden="true"
+          >
+            <span className="absolute left-1/2 top-1/2 h-3 w-12 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-300/80 blur-lg" />
+          </motion.div>
           <motion.h1
             variants={item}
             className="mt-6 italic text-balance text-3xl font-extrabold leading-[1.05] tracking-tight sm:text-4xl lg:text-[2.7rem]"
