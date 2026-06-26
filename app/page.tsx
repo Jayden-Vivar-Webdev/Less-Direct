@@ -23,7 +23,7 @@ export default function Page() {
       <SiteHeader />
       <main>
         <Hero />
-        {/* <TrustedBrands /> */}
+        <TrustedBrands />
         <Stats />
         <Categories />
         <Features />
