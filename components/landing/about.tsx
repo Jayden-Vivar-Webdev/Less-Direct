@@ -120,8 +120,8 @@ export function About() {
 
         <div className="order-1 overflow-hidden rounded-xl border border-border lg:order-1">
           <img
-            src="/images/lessdirect-switch.png"
-            alt="LESS DIRECT trade counter team helping an electrician"
+            src="/images/packed-warehouse.png"
+            alt="LESS DIRECT trade counter team helping an electrician in the warehouse"
             className="aspect-[4/3] size-full object-cover"
           />
         </div>

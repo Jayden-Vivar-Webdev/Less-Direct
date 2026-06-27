@@ -17,7 +17,7 @@ const brands: Brand[] = [
 
 function BrandChip({ brand }: { brand: Brand }) {
   return (
-    <div className="flex h-20 w-44 shrink-0 items-center justify-center px-6 sm:w-48">
+    <div className="mr-6 flex h-20 w-44 shrink-0 items-center justify-center px-6 sm:mr-8 sm:w-48">
       <img
         src={brand.logo || "/placeholder.svg"}
         alt={`${brand.name} logo`}
@@ -46,7 +46,7 @@ export function TrustedBrands() {
             className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-background to-transparent sm:w-28"
           />
 
-          <div className="flex w-max animate-brand-marquee gap-6 sm:gap-8">
+          <div className="flex w-max animate-brand-marquee">
             {/* duplicate the list so the loop is seamless */}
             {[...brands, ...brands].map((brand, index) => (
               <BrandChip key={`${brand.name}-${index}`} brand={brand} />
