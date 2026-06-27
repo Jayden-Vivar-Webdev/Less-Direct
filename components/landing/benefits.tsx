@@ -31,8 +31,8 @@ export function Benefits() {
       <div className="relative mx-auto grid max-w-[90rem] items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8 lg:py-30">
         <div className="overflow-hidden rounded-xl border border-border">
           <img
-            src="/images/ld-van.png"
-            alt="LESS DIRECT electrical wholesale warehouse"
+            src="/images/packing-van.png"
+            alt="LESS DIRECT staff loading genuine security and solar products into a delivery van"
             className="aspect-[4/3] size-full object-cover"
           />
         </div>
