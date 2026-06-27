@@ -81,7 +81,8 @@ export function SiteFooter() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} LESS DIRECT Ltd. All rights reserved.
+            © {new Date().getFullYear()} LESS DIRECT Pty Ltd. All rights
+            reserved.
           </p>
           <div className="flex gap-6 text-sm text-muted-foreground">
             <a href="#" className="transition-colors hover:text-foreground">

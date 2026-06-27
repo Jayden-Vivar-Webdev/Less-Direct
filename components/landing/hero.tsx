@@ -36,10 +36,7 @@ const item: Variants = {
 
 export function Hero() {
   return (
-    <section
-      id="top"
-      className="relative overflow-hidden border-b border-border"
-    >
+    <section id="top" className="relative overflow-hidden">
       <div className="absolute inset-0">
         <img
           src="/images/warehouse.png"
@@ -112,14 +109,19 @@ export function Hero() {
             Built for Trade. Priced for{" "}
             <span className="text-[var(--primary)]">Less.</span>
           </motion.h1>
-          <motion.p
+          <motion.div
             variants={item}
-            className="mx-auto mt-6 max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground"
+            className="mx-auto mt-6 max-w-xl space-y-3"
           >
-            LESS Direct supplies trade-quality security, electrical and solar
-            products to installers across Australia, backed by competitive
-            pricing, reliable stock and fast support.
-          </motion.p>
+            <p className="text-pretty text-lg font-semibold leading-relaxed text-foreground sm:text-xl">
+              Australia&apos;s trade supplier for Security, Electrical &amp;
+              Solar.
+            </p>
+            <p className="text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
+              Genuine products. Competitive trade pricing. Fast nationwide
+              delivery. Local support from people who understand installers.
+            </p>
+          </motion.div>
           <motion.div variants={item}>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
               <Button

@@ -5,7 +5,7 @@ const testimonials = [
     quote:
       "Ordered a full consumer unit upgrade at 7pm, it was on site by 9am. LESS DIRECT have basically replaced my old wholesaler.",
     name: "Danny Mercer",
-    role: "Mercer Electrical, Leeds",
+    role: "Mercer Electrical, Sydney",
     initials: "DM",
   },
   {
@@ -19,7 +19,7 @@ const testimonials = [
     quote:
       "Live stock levels are a game changer. I quote jobs knowing the gear's there. Haven't been let down once in two years.",
     name: "Tom Baxter",
-    role: "Baxter & Sons, Bristol",
+    role: "Baxter & Sons, Brisbane",
     initials: "TB",
   },
 ]

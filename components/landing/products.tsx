@@ -282,12 +282,9 @@ export function Products() {
                 <p className="mt-1 text-xs text-muted-foreground">
                   SKU: {product.sku}
                 </p>
-                <div className="mt-4 flex items-end gap-1.5">
-                  <span className="text-2xl font-extrabold tracking-tight">
-                    {product.price}
-                  </span>
-                  <span className="pb-1 text-xs text-muted-foreground">
-                    {product.unit}
+                <div className="mt-4">
+                  <span className="text-lg font-extrabold tracking-tight text-primary">
+                    Trade Pricing Available
                   </span>
                 </div>
                 <Button
@@ -296,7 +293,7 @@ export function Products() {
                   className="mt-4 w-full font-semibold"
                   render={
                     <a href="#contact">
-                      <ShoppingCart className="size-4" /> Open A Trade Account
+                      <ShoppingCart className="size-4" /> Request Pricing
                     </a>
                   }
                 />

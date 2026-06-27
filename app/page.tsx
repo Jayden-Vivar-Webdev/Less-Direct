@@ -4,9 +4,12 @@ import { TrustedBrands } from "@/components/landing/trusted-brands";
 import { Features } from "@/components/landing/features";
 import { Stats } from "@/components/landing/stats";
 import { Categories } from "@/components/landing/categories";
+import { Divisions } from "@/components/landing/divisions";
 import { Products } from "@/components/landing/products";
 import { HowItWorks } from "@/components/landing/how-it-works";
 import { Benefits } from "@/components/landing/benefits";
+import { WhyLessDirect } from "@/components/landing/why-less-direct";
+import { BeatMySupplier } from "@/components/landing/beat-my-supplier";
 import { About } from "@/components/landing/about";
 import { Testimonials } from "@/components/landing/testimonials";
 import { Contact } from "@/components/landing/contact";
@@ -23,13 +26,16 @@ export default function Page() {
       <SiteHeader />
       <main>
         <Hero />
-        {/* <TrustedBrands /> */}
+        <TrustedBrands />
         <Stats />
+        <Divisions />
         <Categories />
         <Features />
         <Products />
         <HowItWorks />
         <Benefits />
+        <WhyLessDirect />
+        <BeatMySupplier />
         <AnimatedGlobe />
         <About />
         {/* <Testimonials /> */}
