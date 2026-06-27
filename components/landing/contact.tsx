@@ -16,7 +16,7 @@ const details = [
   {
     icon: Clock,
     label: "Opening hours",
-    value: "Mon–Fri 6am–8pm · Sat 7am–4pm",
+    value: "Mon to Fri 6am to 8pm · Sat 7am to 4pm",
   },
 ];
 
