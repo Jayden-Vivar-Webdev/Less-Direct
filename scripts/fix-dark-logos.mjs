@@ -32,6 +32,9 @@ async function processLogo({ src, out }) {
   const { width, height, channels } = info;
   const px = Buffer.from(data);
 
+  // Light gray we recolor the red brand accent to.
+  const GRAY = 170;
+
   for (let i = 0; i < px.length; i += channels) {
     const r = px[i];
     const g = px[i + 1];
@@ -50,6 +53,14 @@ async function processLogo({ src, out }) {
       );
     }
     px[i + 3] = alpha;
+
+    // Recolor reddish pixels (red clearly dominant) to neutral gray,
+    // while leaving white/near-neutral pixels untouched.
+    if (alpha > 0 && r > 90 && r - g > 40 && r - b > 40) {
+      px[i] = GRAY;
+      px[i + 1] = GRAY;
+      px[i + 2] = GRAY;
+    }
   }
 
   await sharp(px, { raw: { width, height, channels } })
