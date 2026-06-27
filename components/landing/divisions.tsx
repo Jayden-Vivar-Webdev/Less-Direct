@@ -104,7 +104,7 @@ export function Divisions() {
             Three trades. One trusted supplier.
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
-            Security, Electrical and Solar — everything installers need across
+            Security, Electrical and Solar. Everything installers need across
             Australia, all from a single trade account.
           </p>
         </motion.div>

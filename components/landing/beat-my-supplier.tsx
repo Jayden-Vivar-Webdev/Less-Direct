@@ -78,8 +78,8 @@ export function BeatMySupplier() {
             </h2>
             <p className="mt-4 max-w-xl text-pretty text-base leading-relaxed text-white/80 sm:text-lg">
               Send us your latest invoice or quote and we&apos;ll see if we can
-              beat it. It&apos;s a simple, no-obligation price check — give us a
-              chance to earn your business.
+              beat it. It&apos;s a simple, no-obligation price check, so give us
+              a chance to earn your business.
             </p>
 
             <ul className="mt-8 space-y-5">
@@ -110,7 +110,7 @@ export function BeatMySupplier() {
                 />
                 <h3 className="mt-4 text-xl font-bold">Quote received</h3>
                 <p className="mt-2 max-w-sm text-sm text-muted-foreground">
-                  Thanks — our team will review your pricing and get back to you
+                  Thanks. Our team will review your pricing and get back to you
                   shortly to see if we can beat it.
                 </p>
               </div>

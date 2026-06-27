@@ -10,13 +10,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "LESS DIRECT — Electrical Wholesale for Electricians",
+  title: "LESS DIRECT | Electrical Wholesale for Electricians",
   description:
-    "Trade-only electrical wholesaler. Cables, circuit protection, lighting and more — trade prices, next-day delivery, and stock you can rely on. Built for electricians.",
+    "Trade-only electrical wholesaler. Cables, circuit protection, lighting and more at trade prices, with next-day delivery and stock you can rely on. Built for electricians.",
   openGraph: {
-    title: "LESS DIRECT — Electrical Wholesale for Electricians",
+    title: "LESS DIRECT | Electrical Wholesale for Electricians",
     description:
-      "Trade-only electrical wholesaler. Cables, circuit protection, lighting and more — trade prices, next-day delivery, and stock you can rely on. Built for electricians.",
+      "Trade-only electrical wholesaler. Cables, circuit protection, lighting and more at trade prices, with next-day delivery and stock you can rely on. Built for electricians.",
     images: [
       {
         url: "/og-image.png",
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "LESS DIRECT — Electrical Wholesale for Electricians",
+    title: "LESS DIRECT | Electrical Wholesale for Electricians",
     description:
-      "Trade-only electrical wholesaler. Cables, circuit protection, lighting and more — trade prices, next-day delivery, and stock you can rely on. Built for electricians.",
+      "Trade-only electrical wholesaler. Cables, circuit protection, lighting and more at trade prices, with next-day delivery and stock you can rely on. Built for electricians.",
     images: ["/og-image.png"],
   },
   generator: "Nexa Web Development",
