@@ -1,18 +1,18 @@
 type Brand = { name: string; logo: string };
 
 const brands: Brand[] = [
-  { name: "Dahua", logo: "/images/brands/dahua-white.png" },
-  { name: "WizSense", logo: "/images/brands/wizsense-white.png" },
-  { name: "Clipsal", logo: "/images/brands/clipsal-white.png" },
-  { name: "Schneider Electric", logo: "/images/brands/schneider-white.png" },
-  { name: "HPM", logo: "/images/brands/hpm-white.png" },
-  { name: "Martec", logo: "/images/brands/martec-white.png" },
-  { name: "Matelec", logo: "/images/brands/matelec-white.png" },
-  { name: "Havit Lighting", logo: "/images/brands/havit-white.png" },
-  { name: "Eglo Lighting", logo: "/images/brands/eglo-white.png" },
-  { name: "CLA Lighting", logo: "/images/brands/cla-white.png" },
-  { name: "Beacon Lighting", logo: "/images/brands/beacon-white.png" },
-  { name: "Sungrow", logo: "/images/brands/sungrow-white.png" },
+  { name: "Dahua", logo: "/images/brands/dahua-color.png" },
+  { name: "WizSense", logo: "/images/brands/wizsense-color.png" },
+  { name: "Clipsal", logo: "/images/brands/clipsal-color.png" },
+  { name: "Schneider Electric", logo: "/images/brands/schneider-color.png" },
+  { name: "HPM", logo: "/images/brands/hpm-color.png" },
+  { name: "Martec", logo: "/images/brands/martec-color.png" },
+  { name: "Matelec", logo: "/images/brands/matelec-color.png" },
+  { name: "Havit Lighting", logo: "/images/brands/havit-color.png" },
+  { name: "Eglo Lighting", logo: "/images/brands/eglo-color.png" },
+  { name: "CLA Lighting", logo: "/images/brands/cla-color.png" },
+  { name: "Beacon Lighting", logo: "/images/brands/beacon-color.png" },
+  { name: "Sungrow", logo: "/images/brands/sungrow-color.png" },
 ];
 
 function BrandChip({ brand }: { brand: Brand }) {
@@ -21,7 +21,7 @@ function BrandChip({ brand }: { brand: Brand }) {
       <img
         src={brand.logo || "/placeholder.svg"}
         alt={`${brand.name} logo`}
-        className="max-h-12 w-auto object-contain opacity-80 transition-opacity duration-300 hover:opacity-100"
+        className="max-h-12 w-auto object-contain"
       />
     </div>
   );
