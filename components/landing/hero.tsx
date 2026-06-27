@@ -36,10 +36,7 @@ const item: Variants = {
 
 export function Hero() {
   return (
-    <section
-      id="top"
-      className="relative overflow-hidden border-b border-border"
-    >
+    <section id="top" className="relative overflow-hidden">
       <div className="absolute inset-0">
         <img
           src="/images/warehouse.png"

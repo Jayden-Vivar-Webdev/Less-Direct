@@ -179,14 +179,6 @@
 
 .animate-brand-marquee {
   animation: brand-marquee 40s linear infinite;
-}
-
-.brand-marquee-group:hover .animate-brand-marquee {
-  animation-play-state: paused;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .animate-brand-marquee {
-    animation: none;
-  }
+  /* keep scrolling regardless of hover or touch interaction */
+  animation-play-state: running !important;
 }
