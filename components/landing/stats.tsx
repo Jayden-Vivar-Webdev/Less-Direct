@@ -6,11 +6,12 @@ const stats = [
   {
     icon: BadgeCheck,
     title: "Genuine Products Only",
-    description: "Authentic, trade-grade brands you can install with confidence.",
+    description:
+      "Authentic, trade grade brands you can install with confidence.",
   },
   {
     icon: Truck,
-    title: "Fast Australia-Wide Delivery",
+    title: "Fast Australia Wide Delivery",
     description: "Reliable dispatch to job sites and workshops nationwide.",
   },
   {

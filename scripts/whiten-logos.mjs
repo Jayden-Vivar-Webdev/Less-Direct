@@ -15,8 +15,8 @@ const jobs = [
   { in: "cla.webp", out: "cla-white.png" },
   { in: "beacon.png", out: "beacon-white.png" },
   { in: "sungrow.png", out: "sungrow-white.png" },
-  { in: "../dahua-logo.png", out: "dahua-white.png" },
-  { in: "../wizsense-logo.png", out: "wizsense-white.png" },
+  { in: "dahua-logo.png", out: "dahua-white.png" },
+  { in: "wizsense-logo.png", out: "wizsense-white.png" },
 ];
 
 // Pixels near white become transparent; everything else becomes solid white.
@@ -29,9 +29,7 @@ for (const job of jobs) {
   const dst = path.join(dir, job.out);
 
   const img = sharp(src).ensureAlpha();
-  const { data, info } = await img
-    .raw()
-    .toBuffer({ resolveWithObject: true });
+  const { data, info } = await img.raw().toBuffer({ resolveWithObject: true });
 
   const { width, height, channels } = info;
   const out = Buffer.alloc(width * height * 4);

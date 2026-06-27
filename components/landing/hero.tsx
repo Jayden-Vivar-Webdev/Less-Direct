@@ -64,7 +64,7 @@ export function Hero() {
             variants={item}
             className="inline-flex max-w-full items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-primary sm:text-xs"
           >
-            Trade-focused wholesale for installers
+            Trade focused wholesale for installers
           </motion.span>
           <motion.div variants={item} className="relative mt-6 overflow-hidden">
             <img

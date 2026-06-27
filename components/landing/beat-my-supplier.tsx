@@ -17,7 +17,7 @@ const points = [
   {
     icon: FileText,
     title: "No obligation",
-    text: "It\u2019s a free price check \u2014 there\u2019s nothing to commit to.",
+    text: "It\u2019s a free price check there\u2019s nothing to commit to.",
   },
   {
     icon: Clock,
@@ -73,12 +73,12 @@ export function BeatMySupplier() {
             <span className="inline-flex items-center rounded-full border border-primary/40 bg-primary/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-primary">
               Beat My Supplier
             </span>
-            <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl">
+            <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight sm:text-2xl lg:text-3xl">
               Already buying through another wholesaler?
             </h2>
-            <p className="mt-4 max-w-xl text-pretty text-base leading-relaxed text-white/80 sm:text-lg">
+            <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">
               Send us your latest invoice or quote and we&apos;ll see if we can
-              beat it. It&apos;s a simple, no-obligation price check, so give us
+              beat it. It&apos;s a simple, no obligation price check, so give us
               a chance to earn your business.
             </p>
 

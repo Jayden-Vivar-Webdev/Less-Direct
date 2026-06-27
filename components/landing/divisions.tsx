@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  ArrowRight,
-  Cctv,
-  Plug,
-  Sun,
-  type LucideIcon,
-} from "lucide-react";
+import { ArrowRight, Cctv, Plug, Sun, type LucideIcon } from "lucide-react";
 import { motion, type Variants } from "framer-motion";
 
 type Division = {
@@ -43,7 +37,7 @@ const divisions: Division[] = [
     title: "Electrical supply built for the trade",
     description:
       "Switchboards, breakers, cabling, lighting and accessories from leading electrical brands, priced for installers and dispatched fast to keep jobs moving.",
-    image: "/images/electrician-switchboard.jpg",
+    image: "/images/packed-warehouse.png",
     imageAlt: "Electrician wiring a switchboard with LESS Direct supplies",
     highlights: [
       "Switchgear & circuit protection",
@@ -58,7 +52,7 @@ const divisions: Division[] = [
     title: "Solar components for clean installs",
     description:
       "Panels, inverters, mounting and balance-of-system components for residential and commercial solar. Quality gear backed by genuine trade pricing.",
-    image: "/images/solar-install.png",
+    image: "/images/packing-van.png",
     imageAlt: "Rooftop solar panel installation on an Australian home",
     highlights: [
       "Panels & inverters",

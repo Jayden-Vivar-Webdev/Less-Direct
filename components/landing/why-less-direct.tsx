@@ -17,7 +17,7 @@ const reasons = [
     icon: BadgeCheck,
     title: "Genuine products",
     description:
-      "Authentic, trade-grade brands and stock you can install with full confidence.",
+      "Authentic, trade grade brands and stock you can install with full confidence.",
   },
   {
     icon: Tags,
@@ -45,7 +45,7 @@ const reasons = [
   },
   {
     icon: Truck,
-    title: "Australia-wide freight",
+    title: "Australia wide freight",
     description:
       "Reliable dispatch to job sites and workshops right across the country.",
   },
