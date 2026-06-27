@@ -1,43 +1,35 @@
-type Brand =
-  | { name: string; logo: string }
-  | { name: string; wordmark: true };
+type Brand = { name: string; logo: string };
 
 const brands: Brand[] = [
-  { name: "Dahua", logo: "/images/dahua-logo.svg" },
-  { name: "Clipsal", wordmark: true },
-  { name: "Hager", wordmark: true },
-  { name: "Ubiquiti", logo: "/images/ubiquiti-logo.svg" },
-  { name: "Martec", wordmark: true },
-  { name: "HikVision", logo: "/images/Hikvision-logo.png" },
-  { name: "Havit", wordmark: true },
-  { name: "NHP", wordmark: true },
-  { name: "Hanwha", logo: "/images/Hanwha-logo.png" },
-  { name: "Axis", logo: "/images/Axis-Communications-logo.png" },
-  { name: "Uniview", logo: "/images/uniview-logo.png" },
-  { name: "TP-Link", logo: "/images/tp-link-logo.png" },
+  { name: "Dahua", logo: "/images/dahua-logo.png" },
+  { name: "WizSense", logo: "/images/wizsense-logo.png" },
+  { name: "Clipsal", logo: "/images/brands/clipsal.png" },
+  { name: "Schneider Electric", logo: "/images/brands/schneider.png" },
+  { name: "HPM", logo: "/images/brands/hpm.png" },
+  { name: "Martec", logo: "/images/brands/martec.png" },
+  { name: "Matelec", logo: "/images/brands/matelec.jpeg" },
+  { name: "Havit Lighting", logo: "/images/brands/havit.webp" },
+  { name: "Eglo Lighting", logo: "/images/brands/eglo.png" },
+  { name: "CLA Lighting", logo: "/images/brands/cla.webp" },
+  { name: "Beacon Lighting", logo: "/images/brands/beacon.png" },
+  { name: "Sungrow", logo: "/images/brands/sungrow.png" },
 ];
 
 function BrandChip({ brand }: { brand: Brand }) {
   return (
-    <div className="flex h-16 w-40 shrink-0 items-center justify-center px-6">
-      {"logo" in brand ? (
-        <img
-          src={brand.logo || "/placeholder.svg"}
-          alt={`${brand.name} logo`}
-          className="max-h-8 w-auto object-contain opacity-60 brightness-0 invert transition-opacity"
-        />
-      ) : (
-        <span className="text-xl font-extrabold uppercase tracking-tight text-foreground/60">
-          {brand.name}
-        </span>
-      )}
+    <div className="flex h-20 w-44 shrink-0 items-center justify-center rounded-xl bg-white px-6 shadow-sm ring-1 ring-black/5 sm:w-48">
+      <img
+        src={brand.logo || "/placeholder.svg"}
+        alt={`${brand.name} logo`}
+        className="max-h-12 w-auto object-contain"
+      />
     </div>
   );
 }
 
 export function TrustedBrands() {
   return (
-    <section className="relative -mt-px border-b border-border bg-transparent">
+    <section className="relative -mt-px bg-transparent">
       <div className="mx-auto max-w-[90rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-12">
         <p className="text-center text-xs font-semibold uppercase tracking-widest text-muted-foreground">
           Stocking the brands the trade trusts
@@ -54,7 +46,7 @@ export function TrustedBrands() {
             className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-background to-transparent sm:w-28"
           />
 
-          <div className="flex w-max animate-brand-marquee gap-8 sm:gap-12">
+          <div className="flex w-max animate-brand-marquee gap-6 sm:gap-8">
             {/* duplicate the list so the loop is seamless */}
             {[...brands, ...brands].map((brand, index) => (
               <BrandChip key={`${brand.name}-${index}`} brand={brand} />
