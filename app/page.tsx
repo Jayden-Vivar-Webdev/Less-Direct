@@ -45,14 +45,14 @@ export default function Page() {
       </main>
       <FloatingCta />
       <SiteFooter />
-      <Script
+      {/* <Script
         src="https://client-revision-widget.vercel.app/widget.js"
         data-to="contact@nexawebdev.com"
         data-project="Client Project - Less Direct"
         data-side="left"
         data-accent="#2563eb"
         defer
-      />
+      /> */}
     </div>
   );
 }
