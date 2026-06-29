@@ -4,6 +4,7 @@ import { useState } from "react";
 import { CheckCircle2, TrendingDown, FileText, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, Variants } from "framer-motion";
+import { Turnstile } from "@/components/landing/turnstile";
 
 const fieldClass =
   "w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/40";
@@ -39,6 +40,11 @@ export function BeatMySupplier() {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
+
+  const turnstileEnabled = Boolean(
+    process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY,
+  );
 
   return (
     <section
@@ -120,6 +126,14 @@ export function BeatMySupplier() {
                 onSubmit={async (e) => {
                   e.preventDefault();
                   setErrorMessage("");
+
+                  if (turnstileEnabled && !turnstileToken) {
+                    setErrorMessage(
+                      "Please complete the verification challenge.",
+                    );
+                    return;
+                  }
+
                   setIsSubmitting(true);
 
                   const form = e.currentTarget;
@@ -144,6 +158,7 @@ export function BeatMySupplier() {
                     email: String(formData.get("email") || ""),
                     phone: String(formData.get("phone") || ""),
                     message,
+                    turnstileToken,
                   };
 
                   try {
@@ -163,6 +178,7 @@ export function BeatMySupplier() {
                     }
 
                     form.reset();
+                    setTurnstileToken("");
                     setSubmitted(true);
                   } catch (error) {
                     setErrorMessage(
@@ -269,6 +285,10 @@ export function BeatMySupplier() {
                     placeholder="List the products and prices you're currently paying, and we'll see if we can beat it."
                   />
                 </div>
+                <Turnstile
+                  onVerify={setTurnstileToken}
+                  onExpire={() => setTurnstileToken("")}
+                />
                 <Button
                   type="submit"
                   size="lg"
