@@ -148,8 +148,12 @@ export async function POST(request: Request) {
       );
     }
 
-    // Spam protection: reject obvious keyboard-mashing in the name or message.
-    if (looksLikeGibberish(name) || looksLikeGibberish(message)) {
+    // Spam protection: reject obvious keyboard-mashing in any text field.
+    if (
+      looksLikeGibberish(name) ||
+      looksLikeGibberish(company) ||
+      looksLikeGibberish(message)
+    ) {
       return NextResponse.json(
         {
           error:
