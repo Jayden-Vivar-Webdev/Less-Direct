@@ -6,9 +6,12 @@ type ContactPayload = {
   email: string;
   phone?: string;
   message?: string;
+  turnstileToken?: string;
 };
 
 const RESEND_API_URL = "https://api.resend.com/emails";
+const TURNSTILE_VERIFY_URL =
+  "https://challenges.cloudflare.com/turnstile/v0/siteverify";
 
 function isValidEmail(value: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
@@ -17,6 +20,59 @@ function isValidEmail(value: string) {
 function normalizeString(value: unknown) {
   if (typeof value !== "string") return "";
   return value.trim();
+}
+
+// Verify a Cloudflare Turnstile token against the siteverify endpoint.
+async function verifyTurnstile(token: string, ip?: string | null) {
+  const secret = process.env.TURNSTILE_SECRET_KEY;
+  // If no secret is configured, skip verification so the form keeps working.
+  if (!secret) return true;
+  if (!token) return false;
+
+  try {
+    const formData = new URLSearchParams();
+    formData.append("secret", secret);
+    formData.append("response", token);
+    if (ip) formData.append("remoteip", ip);
+
+    const response = await fetch(TURNSTILE_VERIFY_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: formData.toString(),
+    });
+
+    const result = (await response.json()) as { success?: boolean };
+    return Boolean(result.success);
+  } catch (error) {
+    console.error("turnstile verify error", error);
+    return false;
+  }
+}
+
+// Heuristic gibberish detector to block junk like "aksjdbnfiirbifo72934".
+function looksLikeGibberish(value: string) {
+  const trimmed = value.trim();
+  if (!trimmed) return false;
+
+  // Examine each "word" longer than a handful of characters.
+  const words = trimmed.split(/\s+/);
+  for (const word of words) {
+    const letters = word.replace(/[^a-zA-Z]/g, "");
+    if (letters.length < 8) continue;
+
+    const vowels = (letters.match(/[aeiouAEIOU]/g) || []).length;
+    const vowelRatio = vowels / letters.length;
+
+    // Long run of consecutive consonants is a strong gibberish signal.
+    const longConsonantRun = /[^aeiouAEIOU\s]{6,}/.test(word);
+
+    // Very low vowel ratio in a long token reads as keyboard mashing.
+    if (vowelRatio < 0.2 || longConsonantRun) {
+      return true;
+    }
+  }
+
+  return false;
 }
 
 function escapeHtml(value: string) {
@@ -70,6 +126,43 @@ export async function POST(request: Request) {
     const email = normalizeString(body.email);
     const phone = normalizeString(body.phone);
     const message = normalizeString(body.message);
+    const turnstileToken = normalizeString(body.turnstileToken);
+
+    if (!name || !email || !isValidEmail(email)) {
+      return NextResponse.json(
+        { error: "Please provide a valid name and email." },
+        { status: 400 },
+      );
+    }
+
+    // Bot protection: verify the Cloudflare Turnstile challenge.
+    const ip =
+      request.headers.get("cf-connecting-ip") ||
+      request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+      null;
+    const humanVerified = await verifyTurnstile(turnstileToken, ip);
+    if (!humanVerified) {
+      return NextResponse.json(
+        { error: "Verification failed. Please complete the challenge and try again." },
+        { status: 400 },
+      );
+    }
+
+    // Spam protection: reject obvious keyboard-mashing in any text field.
+    if (
+      looksLikeGibberish(name) ||
+      looksLikeGibberish(company) ||
+      looksLikeGibberish(message)
+    ) {
+      return NextResponse.json(
+        {
+          error:
+            "Your submission looks like spam. Please enter your real details.",
+        },
+        { status: 400 },
+      );
+    }
+
     const safeName = escapeHtml(name);
     const safeCompany = escapeHtml(company || "Not provided");
     const safeEmail = escapeHtml(email);
@@ -78,13 +171,6 @@ export async function POST(request: Request) {
       "\n",
       "<br/>",
     );
-
-    if (!name || !email || !isValidEmail(email)) {
-      return NextResponse.json(
-        { error: "Please provide a valid name and email." },
-        { status: 400 },
-      );
-    }
 
     const customerEmailPayload = {
       from,

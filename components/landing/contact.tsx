@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Clock, Mail, MapPin, Phone, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, Variants } from "framer-motion";
+import { Turnstile } from "@/components/landing/turnstile";
 
 const details = [
   { icon: Phone, label: "Trade line", value: "+61 424 696 960" },
@@ -46,6 +47,11 @@ export function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
+
+  const turnstileEnabled = Boolean(
+    process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY,
+  );
 
   return (
     <section
@@ -116,6 +122,14 @@ export function Contact() {
                 onSubmit={async (e) => {
                   e.preventDefault();
                   setErrorMessage("");
+
+                  if (turnstileEnabled && !turnstileToken) {
+                    setErrorMessage(
+                      "Please complete the verification challenge.",
+                    );
+                    return;
+                  }
+
                   setIsSubmitting(true);
 
                   const form = e.currentTarget;
@@ -126,6 +140,7 @@ export function Contact() {
                     email: String(formData.get("email") || ""),
                     phone: String(formData.get("phone") || ""),
                     message: String(formData.get("message") || ""),
+                    turnstileToken,
                   };
 
                   try {
@@ -145,6 +160,7 @@ export function Contact() {
                     }
 
                     form.reset();
+                    setTurnstileToken("");
                     setSubmitted(true);
                   } catch (error) {
                     setErrorMessage(
@@ -236,6 +252,10 @@ export function Contact() {
                     placeholder="Tell us about the supplies you need and we'll sort your pricing."
                   />
                 </div>
+                <Turnstile
+                  onVerify={setTurnstileToken}
+                  onExpire={() => setTurnstileToken("")}
+                />
                 <Button
                   type="submit"
                   size="lg"
