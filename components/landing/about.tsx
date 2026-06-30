@@ -45,7 +45,7 @@ const highlights = [
 
 export function About() {
   return (
-    <section id="about" className="relative border-b border-border">
+    <section id="about" className="relative overflow-hidden border-y border-blue-500/45 shadow-[inset_0_20px_45px_-35px_rgba(37,99,235,0.8),inset_0_-20px_45px_-35px_rgba(37,99,235,0.8)]">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 opacity-8"

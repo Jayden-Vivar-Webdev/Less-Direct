@@ -28,7 +28,7 @@ const stats = [
 
 export function Stats() {
   return (
-    <section className="relative overflow-hidden border-b border-border text-white">
+    <section className="relative overflow-hidden border-y border-blue-500/45 text-white shadow-[inset_0_20px_45px_-35px_rgba(37,99,235,0.8),inset_0_-20px_45px_-35px_rgba(37,99,235,0.8)]">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 opacity-12"
