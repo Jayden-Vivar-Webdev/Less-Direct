@@ -68,7 +68,7 @@ export function Features() {
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-blue-400/90 shadow-[0_0_18px_rgba(37,99,235,0.95)]" />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[url('/images/lessdirect-electricians.png')] bg-cover bg-center opacity-70 md:bg-fixed"
+        className="pointer-events-none absolute inset-0 bg-[url('/images/lessdirect-electricians.png')] bg-cover bg-center opacity-70"
       />
       <div
         aria-hidden="true"
