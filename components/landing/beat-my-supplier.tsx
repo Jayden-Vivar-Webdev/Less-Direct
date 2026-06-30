@@ -42,14 +42,12 @@ export function BeatMySupplier() {
   const [errorMessage, setErrorMessage] = useState("");
   const [turnstileToken, setTurnstileToken] = useState("");
 
-  const turnstileEnabled = Boolean(
-    process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY,
-  );
+  const turnstileEnabled = Boolean(process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY);
 
   return (
     <section
       id="beat-my-supplier"
-      className="relative overflow-hidden border-y border-blue-500/45 text-white shadow-[inset_0_20px_45px_-35px_rgba(37,99,235,0.8),inset_0_-20px_45px_-35px_rgba(37,99,235,0.8)]"
+      className="relative overflow-hidden border-b border-blue-500/45 text-white "
     >
       <div
         aria-hidden="true"
@@ -61,12 +59,6 @@ export function BeatMySupplier() {
           backgroundRepeat: "repeat",
         }}
       />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_0%,hsl(var(--primary)/0.28),transparent_46%),radial-gradient(circle_at_90%_100%,hsl(var(--primary)/0.18),transparent_44%),linear-gradient(to_bottom,rgba(255,255,255,0.05),transparent_30%,rgba(0,0,0,0.55))]"
-      />
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-blue-400/90 shadow-[0_0_18px_rgba(37,99,235,0.95)]" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-blue-400/90 shadow-[0_0_18px_rgba(37,99,235,0.95)]" />
 
       <div className="relative mx-auto max-w-[90rem] px-4 py-20 sm:px-6 lg:px-8 lg:py-32">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">

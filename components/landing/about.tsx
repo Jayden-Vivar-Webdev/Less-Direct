@@ -45,7 +45,7 @@ const highlights = [
 
 export function About() {
   return (
-    <section id="about" className="relative border-b border-border">
+    <section id="about" className="relative">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 opacity-8"

@@ -13,7 +13,7 @@ const benefits = [
 
 export function Benefits() {
   return (
-    <section className="relative overflow-hidden border-b border-border text-white">
+    <section className="relative overflow-hidden text-white">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 opacity-8"
