@@ -92,7 +92,7 @@ export function WhyLessDirect() {
   return (
     <section
       id="why-less-direct"
-      className="relative overflow-hidden border-y border-blue-500/45 bg-card/35 shadow-[inset_0_20px_45px_-35px_rgba(37,99,235,0.8),inset_0_-20px_45px_-35px_rgba(37,99,235,0.8)]"
+      className="relative overflow-hidden border-y border-blue-500/45 bg-card/35"
     >
       <div
         aria-hidden="true"

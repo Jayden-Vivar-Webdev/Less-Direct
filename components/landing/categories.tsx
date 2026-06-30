@@ -28,7 +28,7 @@ const categories = [
 
 export function Categories() {
   return (
-    <section id="categories" className="relative overflow-hidden border-y border-blue-500/45 shadow-[inset_0_20px_45px_-35px_rgba(37,99,235,0.8),inset_0_-20px_45px_-35px_rgba(37,99,235,0.8)]">
+    <section id="categories" className="relative overflow-hidden border-y border-blue-500/45">
       <div className="mx-auto max-w-[90rem] px-4 py-20 sm:px-6 lg:px-8 lg:py-30">
         <div className="max-w-2xl">
           <span className="text-sm font-semibold uppercase tracking-widest text-primary">
